@@ -1,4 +1,4 @@
-package coffestore.ui;
+package old.coffestore.ui;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -8,8 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import coffestore.core.Provision;
-import coffestore.core.test.Factories;
+import old.coffestore.core.Provision;
+import old.coffestore.core.test.Factories;
+
 
 public class ProvisionTableInstance extends JPanel
 {

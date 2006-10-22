@@ -1,4 +1,4 @@
-package coffestore.core;
+package old.coffestore.core;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

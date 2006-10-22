@@ -1,4 +1,4 @@
-package coffestore.core;
+package old.coffestore.core;
 
 public class Tostatura
 {

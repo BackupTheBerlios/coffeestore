@@ -1,10 +1,11 @@
-package coffestore.ui;
+package old.coffestore.ui;
 
 import java.util.Collection;
 
 import javax.swing.table.AbstractTableModel;
 
-import coffestore.core.Provision;
+import old.coffestore.core.Provision;
+
 
 public class ProvisionTable extends AbstractTableModel
 {

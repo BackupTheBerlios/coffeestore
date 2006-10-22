@@ -1,4 +1,4 @@
-package coffestore.ui;
+package old.coffestore.ui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

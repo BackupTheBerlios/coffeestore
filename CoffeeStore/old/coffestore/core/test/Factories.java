@@ -1,6 +1,6 @@
-package coffestore.core.test;
+package old.coffestore.core.test;
 
-import coffestore.core.Provision;
+import old.coffestore.core.Provision;
 
 public class Factories
 {

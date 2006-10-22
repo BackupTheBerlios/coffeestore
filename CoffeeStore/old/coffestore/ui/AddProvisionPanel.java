@@ -1,4 +1,4 @@
-package coffestore.ui;
+package old.coffestore.ui;
 
 import java.awt.GridLayout;
 

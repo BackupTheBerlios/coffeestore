@@ -1,11 +1,12 @@
-package coffestore.core.test;
+package old.coffestore.core.test;
 
 import static org.junit.Assert.*;
 
 import java.io.File;
 
-import coffestore.core.Application;
-import coffestore.core.WareHouse;
+
+import old.coffestore.core.Application;
+import old.coffestore.core.WareHouse;
 
 import org.junit.Before;
 import org.junit.Test;

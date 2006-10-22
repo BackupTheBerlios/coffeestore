@@ -1,14 +1,15 @@
-package coffestore.core.test;
+package old.coffestore.core.test;
 
 
 import static org.junit.Assert.*;
 
+import old.coffestore.core.NotEnoughProvisionException;
+import old.coffestore.core.Provision;
+import old.coffestore.core.ProvisionUnload;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import coffestore.core.NotEnoughProvisionException;
-import coffestore.core.Provision;
-import coffestore.core.ProvisionUnload;
 
 
 public class TestProvision
