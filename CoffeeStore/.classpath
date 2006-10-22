@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry sourcepath="lib/je/je-3.1.0-src.zip" kind="lib" path="lib/je/je-3.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/swt/swt.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
