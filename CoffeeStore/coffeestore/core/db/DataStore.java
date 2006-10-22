@@ -10,8 +10,9 @@ import com.sleepycat.persist.StoreConfig;
 
 public class DataStore
 {
-	private EntityStore itsStore;
-
+	private EntityStore itsEntityStore;
+	private Environment itsEnvironment; 
+	
 	public DataStore(File envHome) throws DatabaseException
 	{
 		EnvironmentConfig envConfig = new EnvironmentConfig();
@@ -20,12 +21,20 @@ public class DataStore
 		storeConfig.setReadOnly(false);
 		envConfig.setAllowCreate(true);
 		storeConfig.setAllowCreate(true);
-		Environment env = new Environment(envHome, envConfig);
-		itsStore = new EntityStore(env, "EntityStore", storeConfig);
+		itsEnvironment = new Environment(envHome, envConfig);
+		itsEntityStore = new EntityStore(itsEnvironment, "EntityStore", storeConfig);
 	}
     
     public EntityStore getEntityStore() 
     {
-    	return itsStore;
+    	return itsEntityStore;
 	}
+    
+    public void close() throws DatabaseException
+    {
+		if (itsEntityStore != null)
+			itsEntityStore.close();
+		if (itsEnvironment != null)
+			itsEnvironment.close();  	
+    }
 }
