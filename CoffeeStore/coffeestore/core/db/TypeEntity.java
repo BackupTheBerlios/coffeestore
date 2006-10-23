@@ -7,7 +7,7 @@ import com.sleepycat.persist.model.PrimaryKey;
 public class TypeEntity
 {
 	@PrimaryKey
-	private String type;
+	private String itsType;
 
 	public TypeEntity()
 	{
@@ -16,12 +16,11 @@ public class TypeEntity
 	
 	public TypeEntity(String type)
 	{
-		super();
-		this.type = type;
+		itsType = type;
 	}
 
 	public String getType()
 	{
-		return type;
+		return itsType;
 	}
 }

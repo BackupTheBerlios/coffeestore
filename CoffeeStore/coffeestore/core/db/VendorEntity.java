@@ -7,7 +7,7 @@ import com.sleepycat.persist.model.PrimaryKey;
 public class VendorEntity
 {
 	@PrimaryKey
-	private String vendor;
+	private String itsVendor;
 
 	public VendorEntity()
 	{
@@ -16,12 +16,11 @@ public class VendorEntity
 	
 	public VendorEntity(String vendor)
 	{
-		super();
-		this.vendor = vendor;
+		itsVendor = vendor;
 	}
 
 	public String getVendor()
 	{
-		return vendor;
+		return itsVendor;
 	}
 }

@@ -1,35 +1,35 @@
 package coffeestore.core.db;
 
+import static com.sleepycat.persist.model.Relationship.*;
 import java.util.Date;
 
 import com.sleepycat.persist.model.Entity;
 import com.sleepycat.persist.model.PrimaryKey;
 import com.sleepycat.persist.model.SecondaryKey;
-import static com.sleepycat.persist.model.Relationship.*;
 
 
 @Entity
 public class ProvisionEntity
 {	
 	@PrimaryKey(sequence="")
-	private long id;
+	private long itsId;
 	
-	private Date date;
-	private String purchaseBillId;
-	private Date purchaseBillDate;
+	private Date itsDate;
+	private String itsPurchaseBillId;
+	private Date itsPurchaseBillDate;
 	
 	@SecondaryKey(relate=MANY_TO_ONE, relatedEntity=VendorEntity.class)
-	private String vendor;
+	private String itsVendor;
 	
 	@SecondaryKey(relate=MANY_TO_ONE, relatedEntity=OriginEntity.class)
-	private String origin;
+	private String itsOrigin;
 	
 	@SecondaryKey(relate=MANY_TO_ONE, relatedEntity=TypeEntity.class)
-	private String type;
+	private String itsType;
 	
-	private String tag;
-	private int totSackNumber;
-	private int totKilos;
+	private String itsTag;
+	private int itsTotSackNumber;
+	private int itsTotKilos;
 
 	public ProvisionEntity()
 	{
@@ -38,65 +38,64 @@ public class ProvisionEntity
 
 	public ProvisionEntity(Date date, String purchaseBillId, Date purchaseBillDate, String vendor, String origin, String type, String tag, int totSackNumber, int totKilos)
 	{
-		super();
-		this.date = date;
-		this.purchaseBillId = purchaseBillId;
-		this.purchaseBillDate = purchaseBillDate;
-		this.vendor = vendor;
-		this.origin = origin;
-		this.type = type;
-		this.tag = tag;
-		this.totSackNumber = totSackNumber;
-		this.totKilos = totKilos;
+		itsDate = date;
+		itsPurchaseBillId = purchaseBillId;
+		itsPurchaseBillDate = purchaseBillDate;
+		itsVendor = vendor;
+		itsOrigin = origin;
+		itsType = type;
+		itsTag = tag;
+		itsTotSackNumber = totSackNumber;
+		itsTotKilos = totKilos;
 	}
 
 	public Date getDate()
 	{
-		return date;
+		return itsDate;
 	}
 
 	public long getId()
 	{
-		return id;
+		return itsId;
 	}
 
 	public String getOrigin()
 	{
-		return origin;
+		return itsOrigin;
 	}
 
 	public Date getPurchaseBillDate()
 	{
-		return purchaseBillDate;
+		return itsPurchaseBillDate;
 	}
 
 	public String getPurchaseBillId()
 	{
-		return purchaseBillId;
+		return itsPurchaseBillId;
 	}
 
 	public String getTag()
 	{
-		return tag;
+		return itsTag;
 	}
 
 	public int getTotKilos()
 	{
-		return totKilos;
+		return itsTotKilos;
 	}
 
 	public int getTotSackNumber()
 	{
-		return totSackNumber;
+		return itsTotSackNumber;
 	}
 
 	public String getType()
 	{
-		return type;
+		return itsType;
 	}
 
 	public String getVendor()
 	{
-		return vendor;
+		return itsVendor;
 	}
 }

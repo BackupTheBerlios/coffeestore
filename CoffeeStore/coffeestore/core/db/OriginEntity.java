@@ -7,21 +7,20 @@ import com.sleepycat.persist.model.PrimaryKey;
 public class OriginEntity
 {
 	@PrimaryKey
-	private String origin;
+	private String itsOrigin;
 
 	public OriginEntity()
 	{
 		
 	}
 	
-	public OriginEntity(String origin)
+	public OriginEntity(String anOrigin)
 	{
-		super();
-		this.origin = origin;
+		itsOrigin = anOrigin;
 	}
 
 	public String getOrigin()
 	{
-		return origin;
+		return itsOrigin;
 	}
 }

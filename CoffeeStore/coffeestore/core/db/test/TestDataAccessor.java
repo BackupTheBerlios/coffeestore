@@ -24,9 +24,9 @@ public class TestDataAccessor
 	
 	@After
 	public void tearDown() throws Exception
-	{
-		Utility.cleanupVendorEntity(itsVendorDataAccessor);
-		itsDataStore.close();
+	{ 
+		Utility.cleanupEntity(itsVendorDataAccessor);
+		itsDataStore.close();		
 	}
 	
 	@Test
