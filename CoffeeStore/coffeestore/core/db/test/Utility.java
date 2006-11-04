@@ -8,7 +8,7 @@ import coffeestore.core.db.DataStore;
 import coffeestore.core.db.VendorEntity;
 
 import com.sleepycat.je.DatabaseException;
-import com.sleepycat.persist.EntityCursor;
+
 
 public class Utility
 {
@@ -38,13 +38,5 @@ public class Utility
 	public static DataAccessor<String, VendorEntity> createVendorDataAccessor(DataStore aDataStore) throws DatabaseException
 	{
 		return new DataAccessorHolder(aDataStore).getVendorAccessor();
-	}
-	
-	public static <PK, E> void cleanupEntity(DataAccessor<PK, E> aDataAccessor) throws Exception
-	{
-		EntityCursor<E> cursor = aDataAccessor.getPrimaryIndex().entities();
-    	while (cursor.next() != null)
-    		cursor.delete();
-    	cursor.close();    	
 	}
 }

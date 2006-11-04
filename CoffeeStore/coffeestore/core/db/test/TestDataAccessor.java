@@ -2,6 +2,8 @@ package coffeestore.core.db.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,10 +16,12 @@ public class TestDataAccessor
 {
 	private DataStore itsDataStore;
 	private DataAccessor<String, VendorEntity> itsVendorDataAccessor;
+	private File itsFile;
 	
 	@Before
 	public void setUp() throws Exception
 	{
+		itsFile = Utility.createDataStoreFile();
 		itsDataStore = Utility.createDataStore();
 		itsVendorDataAccessor = Utility.createVendorDataAccessor(itsDataStore);
 	}
@@ -25,8 +29,8 @@ public class TestDataAccessor
 	@After
 	public void tearDown() throws Exception
 	{ 
-		Utility.cleanupEntity(itsVendorDataAccessor);
-		itsDataStore.close();		
+		Utility.deleteDataStoreFile(itsFile);
+		itsDataStore.close();
 	}
 	
 	@Test
