@@ -22,7 +22,7 @@ public class TestDataAccessor
 	public void setUp() throws Exception
 	{
 		itsFile = Utility.createDataStoreFile();
-		itsDataStore = Utility.createDataStore();
+		itsDataStore = Utility.createDataStore(false);
 		itsVendorDataAccessor = Utility.createVendorDataAccessor(itsDataStore);
 	}
 	

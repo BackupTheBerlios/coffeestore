@@ -13,7 +13,7 @@ public class DataAccessor<PK, E>
 	public DataAccessor(DataStore dataStore, Class<PK> primaryKeyClass, Class<E> entityClass) throws DatabaseException
 	{
 		itsDataStore = dataStore;
-		itsPrimaryIndex = dataStore.getEntityStore().getPrimaryIndex(primaryKeyClass, entityClass); 
+		itsPrimaryIndex = dataStore.getEntityStore().getPrimaryIndex(primaryKeyClass, entityClass);
 	}
 	
 	public void put(E entity) throws DatabaseException
@@ -41,4 +41,3 @@ public class DataAccessor<PK, E>
 		return itsPrimaryIndex;
 	}
 }
-

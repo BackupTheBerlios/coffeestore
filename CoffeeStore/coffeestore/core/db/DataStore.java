@@ -12,24 +12,28 @@ public class DataStore
 {
 	private EntityStore itsEntityStore;
 	private Environment itsEnvironment; 
+	private File itsEnvHome;
+	private boolean itsIsReadOnly;
 	
-	public DataStore(File envHome) throws DatabaseException
+	public DataStore(File envHome, boolean isReadOnly) throws DatabaseException
+	{
+		itsEnvHome = envHome;
+		itsIsReadOnly = isReadOnly;
+		open();
+	}
+
+	public void open() throws DatabaseException
 	{
 		EnvironmentConfig envConfig = new EnvironmentConfig();
 		StoreConfig storeConfig = new StoreConfig();
-		envConfig.setReadOnly(false);
-		storeConfig.setReadOnly(false);
-		envConfig.setAllowCreate(true);
-		storeConfig.setAllowCreate(true);
-		itsEnvironment = new Environment(envHome, envConfig);
+		envConfig.setReadOnly(itsIsReadOnly);
+		storeConfig.setReadOnly(itsIsReadOnly);
+		envConfig.setAllowCreate(!itsIsReadOnly);
+		storeConfig.setAllowCreate(!itsIsReadOnly);
+		itsEnvironment = new Environment(itsEnvHome, envConfig);
 		itsEntityStore = new EntityStore(itsEnvironment, "EntityStore", storeConfig);
 	}
-    
-    public EntityStore getEntityStore() 
-    {
-    	return itsEntityStore;
-	}
-    
+
     public void close() throws DatabaseException
     {
 		if (itsEntityStore != null)
@@ -37,4 +41,9 @@ public class DataStore
 		if (itsEnvironment != null)
 			itsEnvironment.close();  	
     }
+    
+    public EntityStore getEntityStore() 
+    {
+    	return itsEntityStore;
+	}
 }

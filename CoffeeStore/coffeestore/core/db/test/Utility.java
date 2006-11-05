@@ -12,10 +12,10 @@ import com.sleepycat.je.DatabaseException;
 
 public class Utility
 {
-	public static DataStore createDataStore() throws Exception
+	public static DataStore createDataStore(boolean isReadOnly) throws Exception
 	{
 		File file = createDataStoreFile();
-		return new DataStore(file);
+		return new DataStore(file, isReadOnly);
 	}
 
 	static File createDataStoreFile() throws Exception
@@ -30,9 +30,9 @@ public class Utility
 		file.delete();
 	}
 	
-	static DataStore createDataStore(File file) throws Exception
+	static DataStore createDataStore(File file, boolean isReadOnly) throws Exception
 	{
-		return new DataStore(file);
+		return new DataStore(file, isReadOnly);
 	}
 	
 	public static DataAccessor<String, VendorEntity> createVendorDataAccessor(DataStore aDataStore) throws DatabaseException

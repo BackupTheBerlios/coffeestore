@@ -5,11 +5,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 
+import com.sleepycat.je.DatabaseException;
+
 import coffeestore.core.db.DataAccessorHolder;
 import coffeestore.core.db.test.Utility;
 import coffeestore.ui.*;
-
-
 
 public class CompViewer extends ApplicationWindow
 {
@@ -20,18 +20,18 @@ public class CompViewer extends ApplicationWindow
 		super(null);
 		try 
 		{
-			itsDataAccessorHolder = new DataAccessorHolder(Utility.createDataStore());
+			itsDataAccessorHolder = new DataAccessorHolder(Utility.createDataStore(false));
 		}
 		catch (Exception e) 
 		{
-			System.out.println(e.getStackTrace());
+			e.printStackTrace();
 		}
 	}
 	
 	@Override
 	protected Control createContents(Composite aParent)
 	{
-		new AddProvisionForm_2(aParent, itsDataAccessorHolder);
+		new AddProvisionForm(aParent, itsDataAccessorHolder);
 		return aParent;
 	}
 	
@@ -41,5 +41,19 @@ public class CompViewer extends ApplicationWindow
 		cv.setBlockOnOpen(true);
 		cv.open();
 		Display.getCurrent().dispose();
+		cv.closeDataBase();
+	}
+
+	private void closeDataBase()
+	{
+		try
+		{
+			itsDataAccessorHolder.getDataStore().close();
+		} 
+		catch (DatabaseException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
