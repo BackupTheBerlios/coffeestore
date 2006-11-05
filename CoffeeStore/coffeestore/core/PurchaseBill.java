@@ -1,19 +1,17 @@
 package coffeestore.core;
 
-import java.util.Date;
-
 public class PurchaseBill
 {
 	private String itsPurchaseBillId;
-	private Date itsPurchaseBillDate;
+	private String itsPurchaseBillDate;
 	
-	public PurchaseBill(String purchaseBillId, Date purchaseBillDate)
+	public PurchaseBill(String purchaseBillId, String purchaseBillDate)
 	{
 		itsPurchaseBillId = purchaseBillId;
 		itsPurchaseBillDate = purchaseBillDate;
 	}
 	
-	public Date getPurchaseBillDate()
+	public String getPurchaseBillDate()
 	{
 		return itsPurchaseBillDate;
 	}

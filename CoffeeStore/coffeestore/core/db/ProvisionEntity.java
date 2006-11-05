@@ -1,8 +1,6 @@
 package coffeestore.core.db;
 
 import static com.sleepycat.persist.model.Relationship.*;
-import java.util.Date;
-
 import com.sleepycat.persist.model.Entity;
 import com.sleepycat.persist.model.PrimaryKey;
 import com.sleepycat.persist.model.SecondaryKey;
@@ -14,9 +12,9 @@ public class ProvisionEntity
 	@PrimaryKey(sequence="")
 	private long itsId;
 	
-	private Date itsDate;
+	private String itsDate;
 	private String itsPurchaseBillId;
-	private Date itsPurchaseBillDate;
+	private String itsPurchaseBillDate;
 	
 	@SecondaryKey(relate=MANY_TO_ONE, relatedEntity=VendorEntity.class)
 	private String itsVendor;
@@ -36,7 +34,7 @@ public class ProvisionEntity
 		
 	}
 
-	public ProvisionEntity(Date date, String purchaseBillId, Date purchaseBillDate, String vendor, String origin, String type, String tag, int totSackNumber, int totKilos)
+	public ProvisionEntity(String date, String purchaseBillId, String purchaseBillDate, String vendor, String origin, String type, String tag, int totSackNumber, int totKilos)
 	{
 		itsDate = date;
 		itsPurchaseBillId = purchaseBillId;
@@ -49,7 +47,7 @@ public class ProvisionEntity
 		itsTotKilos = totKilos;
 	}
 
-	public Date getDate()
+	public String getDate()
 	{
 		return itsDate;
 	}
@@ -64,7 +62,7 @@ public class ProvisionEntity
 		return itsOrigin;
 	}
 
-	public Date getPurchaseBillDate()
+	public String getPurchaseBillDate()
 	{
 		return itsPurchaseBillDate;
 	}

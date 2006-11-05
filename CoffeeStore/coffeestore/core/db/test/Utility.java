@@ -12,7 +12,7 @@ import com.sleepycat.je.DatabaseException;
 
 public class Utility
 {
-	static DataStore createDataStore() throws Exception
+	public static DataStore createDataStore() throws Exception
 	{
 		File file = createDataStoreFile();
 		return new DataStore(file);
