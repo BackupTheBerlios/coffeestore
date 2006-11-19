@@ -10,15 +10,19 @@ namespace Torrefazione
 {
     public partial class ApprovvigionamentiForm : Form
     {
-        List<Approvvigionamento> list;
+        ApprovvigionamentoDataBinder _dataBinder;
+
         public ApprovvigionamentiForm()
         {
             InitializeComponent();
-            populateVenditoreCombo();
-            populateOrigineCombo();
-            populateTipoCombo();
 
-            refreshDataGrid();
+            _dataBinder = new ApprovvigionamentoDataBinder(dataGridView);
+
+            PopulateVenditoreCombo();
+            PopulateOrigineCombo();
+            PopulateTipoCombo();
+
+            RefreshDataGrid();
         }
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
@@ -39,8 +43,9 @@ namespace Torrefazione
             Db.Set(new Approvvigionamento(dataPicker.Value.Date, venditore, textNumFattura.Text, dataFatturaPicker.Value.Date, origine, tipo, textMarche.Text, Decimal.ToInt32(numericNumSacchi.Value), Decimal.ToInt32(numericKgNetti.Value)));
 
             MessageBox.Show("Approvvigionamento aggiunto");
-            resetForm();
-            refreshDataGrid();
+            ResetForm();
+
+            RefreshDataGrid();
         }
 
         private bool isFormValid()
@@ -90,7 +95,7 @@ namespace Torrefazione
             return true;
         }
 
-        private void resetForm()
+        private void ResetForm()
         {
             dataPicker.Value = DateTime.Today;
             comboVenditore.Text = ""; //FIXME: mettere un default
@@ -103,37 +108,25 @@ namespace Torrefazione
             numericKgNetti.Value = 0;
         }
 
-        private void refreshDataGrid()
+        private void RefreshDataGrid()
         {
-            list = new List<Approvvigionamento>();
-
-            foreach (Approvvigionamento app in Db.GetAll<Approvvigionamento>())
-                list.Add(app);
-
-            list.Sort(delegate(Approvvigionamento x, Approvvigionamento y)
-                {
-                    return -1 * x.Data.CompareTo(y.Data);
-                }
-            );
-
-            dataGridView.DataSource = list;
-
-            toolStripStatusLabel.Text = "Numero approvvigiomaneti: " + list.Count;
+            _dataBinder.Refresh();
+            toolStripStatusLabel.Text = "Numero approvvigiomaneti: " + _dataBinder.Count;
         }
 
-        private void populateVenditoreCombo()
+        private void PopulateVenditoreCombo()
         {
             foreach (Venditore v in Db.GetAll<Venditore>())
                 comboVenditore.Items.Add(v.Value);
         }
 
-        private void populateOrigineCombo()
+        private void PopulateOrigineCombo()
         {
             foreach (Origine v in Db.GetAll<Origine>())
                 comboOrigine.Items.Add(v.Value);
         }
 
-        private void populateTipoCombo()
+        private void PopulateTipoCombo()
         {
             foreach (Tipo v in Db.GetAll<Tipo>())
                 comboTipo.Items.Add(v.Value);

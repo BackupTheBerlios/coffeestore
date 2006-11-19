@@ -53,8 +53,6 @@ namespace Torrefazione
             this.groupAggiungi = new System.Windows.Forms.GroupBox();
             this.buttonAggiungi = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.venditoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFatturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,18 +62,20 @@ namespace Torrefazione
             this.sacchiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kgNettiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.approvvigionamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericNumSacchi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericKgNetti)).BeginInit();
             this.groupAggiungi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonVenditore
             // 
             this.buttonVenditore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonVenditore.Location = new System.Drawing.Point(551, 34);
+            this.buttonVenditore.Location = new System.Drawing.Point(480, 34);
             this.buttonVenditore.Name = "buttonVenditore";
             this.buttonVenditore.Size = new System.Drawing.Size(114, 23);
             this.buttonVenditore.TabIndex = 0;
@@ -86,7 +86,7 @@ namespace Torrefazione
             // buttonOrigine
             // 
             this.buttonOrigine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOrigine.Location = new System.Drawing.Point(551, 115);
+            this.buttonOrigine.Location = new System.Drawing.Point(480, 115);
             this.buttonOrigine.Name = "buttonOrigine";
             this.buttonOrigine.Size = new System.Drawing.Size(114, 23);
             this.buttonOrigine.TabIndex = 1;
@@ -199,7 +199,7 @@ namespace Torrefazione
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dataPicker.Location = new System.Drawing.Point(85, 12);
             this.dataPicker.Name = "dataPicker";
-            this.dataPicker.Size = new System.Drawing.Size(580, 20);
+            this.dataPicker.Size = new System.Drawing.Size(509, 20);
             this.dataPicker.TabIndex = 11;
             // 
             // dataFatturaPicker
@@ -208,7 +208,7 @@ namespace Torrefazione
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dataFatturaPicker.Location = new System.Drawing.Point(85, 89);
             this.dataFatturaPicker.Name = "dataFatturaPicker";
-            this.dataFatturaPicker.Size = new System.Drawing.Size(580, 20);
+            this.dataFatturaPicker.Size = new System.Drawing.Size(509, 20);
             this.dataFatturaPicker.TabIndex = 12;
             // 
             // comboVenditore
@@ -220,7 +220,7 @@ namespace Torrefazione
             this.comboVenditore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboVenditore.Location = new System.Drawing.Point(85, 36);
             this.comboVenditore.Name = "comboVenditore";
-            this.comboVenditore.Size = new System.Drawing.Size(460, 21);
+            this.comboVenditore.Size = new System.Drawing.Size(389, 21);
             this.comboVenditore.TabIndex = 13;
             // 
             // comboOrigine
@@ -231,7 +231,7 @@ namespace Torrefazione
             this.comboOrigine.FormattingEnabled = true;
             this.comboOrigine.Location = new System.Drawing.Point(85, 115);
             this.comboOrigine.Name = "comboOrigine";
-            this.comboOrigine.Size = new System.Drawing.Size(460, 21);
+            this.comboOrigine.Size = new System.Drawing.Size(389, 21);
             this.comboOrigine.TabIndex = 14;
             // 
             // comboTipo
@@ -242,7 +242,7 @@ namespace Torrefazione
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Location = new System.Drawing.Point(85, 142);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(460, 21);
+            this.comboTipo.Size = new System.Drawing.Size(389, 21);
             this.comboTipo.TabIndex = 15;
             // 
             // textNumFattura
@@ -251,7 +251,7 @@ namespace Torrefazione
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textNumFattura.Location = new System.Drawing.Point(85, 63);
             this.textNumFattura.Name = "textNumFattura";
-            this.textNumFattura.Size = new System.Drawing.Size(580, 20);
+            this.textNumFattura.Size = new System.Drawing.Size(509, 20);
             this.textNumFattura.TabIndex = 16;
             // 
             // textMarche
@@ -260,7 +260,7 @@ namespace Torrefazione
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textMarche.Location = new System.Drawing.Point(85, 169);
             this.textMarche.Name = "textMarche";
-            this.textMarche.Size = new System.Drawing.Size(580, 20);
+            this.textMarche.Size = new System.Drawing.Size(509, 20);
             this.textMarche.TabIndex = 17;
             // 
             // numericNumSacchi
@@ -274,7 +274,7 @@ namespace Torrefazione
             0,
             0});
             this.numericNumSacchi.Name = "numericNumSacchi";
-            this.numericNumSacchi.Size = new System.Drawing.Size(580, 20);
+            this.numericNumSacchi.Size = new System.Drawing.Size(509, 20);
             this.numericNumSacchi.TabIndex = 18;
             // 
             // numericKgNetti
@@ -288,13 +288,13 @@ namespace Torrefazione
             0,
             0});
             this.numericKgNetti.Name = "numericKgNetti";
-            this.numericKgNetti.Size = new System.Drawing.Size(580, 20);
+            this.numericKgNetti.Size = new System.Drawing.Size(509, 20);
             this.numericKgNetti.TabIndex = 19;
             // 
             // buttonTipo
             // 
             this.buttonTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonTipo.Location = new System.Drawing.Point(551, 142);
+            this.buttonTipo.Location = new System.Drawing.Point(480, 142);
             this.buttonTipo.Name = "buttonTipo";
             this.buttonTipo.Size = new System.Drawing.Size(114, 23);
             this.buttonTipo.TabIndex = 20;
@@ -330,7 +330,7 @@ namespace Torrefazione
             this.groupAggiungi.Controls.Add(this.labelVenditore);
             this.groupAggiungi.Location = new System.Drawing.Point(12, 12);
             this.groupAggiungi.Name = "groupAggiungi";
-            this.groupAggiungi.Size = new System.Drawing.Size(683, 277);
+            this.groupAggiungi.Size = new System.Drawing.Size(612, 277);
             this.groupAggiungi.TabIndex = 21;
             this.groupAggiungi.TabStop = false;
             this.groupAggiungi.Text = "Aggiungi";
@@ -338,7 +338,7 @@ namespace Torrefazione
             // buttonAggiungi
             // 
             this.buttonAggiungi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAggiungi.Location = new System.Drawing.Point(590, 247);
+            this.buttonAggiungi.Location = new System.Drawing.Point(519, 247);
             this.buttonAggiungi.Name = "buttonAggiungi";
             this.buttonAggiungi.Size = new System.Drawing.Size(75, 23);
             this.buttonAggiungi.TabIndex = 21;
@@ -368,23 +368,8 @@ namespace Torrefazione
             this.dataGridView.Location = new System.Drawing.Point(12, 295);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(684, 451);
+            this.dataGridView.Size = new System.Drawing.Size(613, 322);
             this.dataGridView.TabIndex = 22;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(708, 22);
-            this.statusStrip1.TabIndex = 23;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -446,11 +431,26 @@ namespace Torrefazione
             // 
             this.approvvigionamentoBindingSource.DataSource = typeof(Torrefazione.Approvvigionamento);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 620);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(637, 22);
+            this.statusStrip1.TabIndex = 23;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // ApprovvigionamentiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 749);
+            this.ClientSize = new System.Drawing.Size(637, 642);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupAggiungi);
@@ -461,9 +461,9 @@ namespace Torrefazione
             this.groupAggiungi.ResumeLayout(false);
             this.groupAggiungi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -46,7 +46,14 @@
     <Compile Include="ApprovvigionamentiForm.Designer.cs">
       <DependentUpon>ApprovvigionamentiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApprovvigionamentiView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovvigionamentiView.Designer.cs">
+      <DependentUpon>ApprovvigionamentiView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Approvvigionamento.cs" />
+    <Compile Include="ApprovvigionamentoDataBinder.cs" />
     <Compile Include="Db.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -65,6 +72,10 @@
     <EmbeddedResource Include="ApprovvigionamentiForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ApprovvigionamentiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApprovvigionamentiView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ApprovvigionamentiView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>

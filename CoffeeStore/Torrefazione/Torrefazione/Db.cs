@@ -30,6 +30,15 @@ namespace Torrefazione
             return _data.Query<T>(typeof(T));
         }
 
+        public static bool Del(object obj)
+        {
+            ObjectSet objectSet = _data.Get(obj);
+            if (objectSet.Count == 0)
+                return false;      
+            _data.Delete(objectSet.Next());
+            return true;
+        }
+
         public static T GetByValue<T>(string value) where T : ValueHolder<string>, new()
         {
             T obj = new T();
