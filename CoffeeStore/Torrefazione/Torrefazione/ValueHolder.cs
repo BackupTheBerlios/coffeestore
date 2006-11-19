@@ -13,9 +13,15 @@ namespace Torrefazione
             _value = value;
         }
 
+        public ValueHolder()
+        { 
+        
+        }
+
         public T Value
         {
             get { return _value; }
+            set { _value = Value; }
         }
 
         public override string ToString()

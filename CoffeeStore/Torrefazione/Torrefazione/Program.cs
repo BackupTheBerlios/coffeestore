@@ -18,7 +18,7 @@ namespace Torrefazione
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            Db.data.Close();
+            Db.Close();
         }
     }
 }

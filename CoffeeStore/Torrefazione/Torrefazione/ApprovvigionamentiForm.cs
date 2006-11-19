@@ -10,35 +10,111 @@ namespace Torrefazione
 {
     public partial class ApprovvigionamentiForm : Form
     {
-        IList<Approvvigionamento> list;
+        List<Approvvigionamento> list;
         public ApprovvigionamentiForm()
         {
             InitializeComponent();
             populateVenditoreCombo();
+            populateOrigineCombo();
+            populateTipoCombo();
 
             refreshDataGrid();
-        }
-
-        private void ApprovvigionamentiForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
-            //comboOrigine.Text; // ??
-            //comboTipo.Text; // ??
-            Db.data.Set(new Approvvigionamento(dataPicker.Value.Date, new Venditore(comboVenditore.Text), textNumFattura.Text, dataFatturaPicker.Value.Date, null, null, textMarche.Text, Decimal.ToInt32(numericNumSacchi.Value), Decimal.ToInt32(numericKgNetti.Value)));
+            if (!isFormValid())
+                return;
+
+            Venditore venditore = Db.GetVenditore(comboVenditore.Text);
+            Origine origine = Db.GetOrigine(comboOrigine.Text);
+            Tipo tipo = Db.GetTipo(comboTipo.Text);
+
+            if (venditore == null || origine == null || tipo == null)
+            {
+                MessageBox.Show("Internal DB error");
+                return;
+            }
+
+            Db.Set(new Approvvigionamento(dataPicker.Value.Date, venditore, textNumFattura.Text, dataFatturaPicker.Value.Date, origine, tipo, textMarche.Text, Decimal.ToInt32(numericNumSacchi.Value), Decimal.ToInt32(numericKgNetti.Value)));
+
             MessageBox.Show("Approvvigionamento aggiunto");
+            resetForm();
             refreshDataGrid();
+        }
+
+        private bool isFormValid()
+        {
+            if (comboVenditore.Text.Length == 0)
+            {
+                MessageBox.Show("Seleziona un venditore");
+                return false;
+            }
+
+            if (comboOrigine.Text.Length == 0)
+            {
+                MessageBox.Show("Seleziona un'origine");
+                return false;
+            }
+
+            if (comboTipo.Text.Length == 0)
+            {
+                MessageBox.Show("Seleziona un tipo");
+                return false;
+            }
+
+            if (textNumFattura.Text.Length == 0)
+            {
+                MessageBox.Show("Riempi numero fattura");
+                return false;
+            }
+
+            if (textMarche.Text.Length == 0)
+            {
+                MessageBox.Show("Riempi marche");
+                return false;
+            }
+
+            if (numericNumSacchi.Value == 0)
+            {
+                MessageBox.Show("Numero di sacchi non valido");
+                return false;
+            }
+
+            if (numericKgNetti.Value == 0)
+            {
+                MessageBox.Show("Kg netti non validi");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void resetForm()
+        {
+            dataPicker.Value = DateTime.Today;
+            comboVenditore.Text = ""; //FIXME: mettere un default
+            textNumFattura.Text = "";
+            dataFatturaPicker.Value = DateTime.Today;
+            comboOrigine.Text = ""; //FIXME: mettere un default
+            comboTipo.Text = "";
+            textMarche.Text = ""; //FIXME: mettere un default
+            numericNumSacchi.Value = 0;
+            numericKgNetti.Value = 0;
         }
 
         private void refreshDataGrid()
         {
             list = new List<Approvvigionamento>();
 
-            foreach (Approvvigionamento app in Db.data.Query<Approvvigionamento>(typeof(Approvvigionamento)))
+            foreach (Approvvigionamento app in Db.GetAll<Approvvigionamento>())
                 list.Add(app);
+
+            list.Sort(delegate(Approvvigionamento x, Approvvigionamento y)
+                {
+                    return -1 * x.Data.CompareTo(y.Data);
+                }
+            );
 
             dataGridView.DataSource = list;
 
@@ -47,8 +123,20 @@ namespace Torrefazione
 
         private void populateVenditoreCombo()
         {
-            foreach (Venditore v in Db.data.Query<Venditore>(typeof(Venditore)))
+            foreach (Venditore v in Db.GetAll<Venditore>())
                 comboVenditore.Items.Add(v.Value);
+        }
+
+        private void populateOrigineCombo()
+        {
+            foreach (Origine v in Db.GetAll<Origine>())
+                comboOrigine.Items.Add(v.Value);
+        }
+
+        private void populateTipoCombo()
+        {
+            foreach (Tipo v in Db.GetAll<Tipo>())
+                comboTipo.Items.Add(v.Value);
         }
 
         private void buttonVenditore_Click(object sender, EventArgs e)
@@ -57,6 +145,22 @@ namespace Torrefazione
             venditoriForm.ShowDialog();
             if (venditoriForm.Venditore.Length != 0)
                 comboVenditore.Items.Add(venditoriForm.Venditore);
+        }
+
+        private void buttonOrigine_Click(object sender, EventArgs e)
+        {
+            OriginiForm originiForm = new OriginiForm();
+            originiForm.ShowDialog();
+            if (originiForm.Origine.Length != 0)
+                comboOrigine.Items.Add(originiForm.Origine);
+        }
+
+        private void buttonTipo_Click(object sender, EventArgs e)
+        {
+            TipiForm tipoForm = new TipiForm();
+            tipoForm.ShowDialog();
+            if (tipoForm.Tipo.Length != 0)
+                comboTipo.Items.Add(tipoForm.Tipo);
         }
     }
 }

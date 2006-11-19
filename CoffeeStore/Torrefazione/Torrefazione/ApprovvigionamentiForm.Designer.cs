@@ -30,7 +30,7 @@ namespace Torrefazione
         {
             this.components = new System.ComponentModel.Container();
             this.buttonVenditore = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonOrigine = new System.Windows.Forms.Button();
             this.labelVenditore = new System.Windows.Forms.Label();
             this.labelNumFattura = new System.Windows.Forms.Label();
             this.labelDataFattura = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@ namespace Torrefazione
             this.textMarche = new System.Windows.Forms.TextBox();
             this.numericNumSacchi = new System.Windows.Forms.NumericUpDown();
             this.numericKgNetti = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonTipo = new System.Windows.Forms.Button();
             this.groupAggiungi = new System.Windows.Forms.GroupBox();
             this.buttonAggiungi = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -83,15 +83,16 @@ namespace Torrefazione
             this.buttonVenditore.UseVisualStyleBackColor = true;
             this.buttonVenditore.Click += new System.EventHandler(this.buttonVenditore_Click);
             // 
-            // button2
+            // buttonOrigine
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(551, 115);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonOrigine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOrigine.Location = new System.Drawing.Point(551, 115);
+            this.buttonOrigine.Name = "buttonOrigine";
+            this.buttonOrigine.Size = new System.Drawing.Size(114, 23);
+            this.buttonOrigine.TabIndex = 1;
+            this.buttonOrigine.Text = "Aggiungi Origine";
+            this.buttonOrigine.UseVisualStyleBackColor = true;
+            this.buttonOrigine.Click += new System.EventHandler(this.buttonOrigine_Click);
             // 
             // labelVenditore
             // 
@@ -214,7 +215,9 @@ namespace Torrefazione
             // 
             this.comboVenditore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboVenditore.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboVenditore.FormattingEnabled = true;
+            this.comboVenditore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboVenditore.Location = new System.Drawing.Point(85, 36);
             this.comboVenditore.Name = "comboVenditore";
             this.comboVenditore.Size = new System.Drawing.Size(460, 21);
@@ -224,6 +227,7 @@ namespace Torrefazione
             // 
             this.comboOrigine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboOrigine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboOrigine.FormattingEnabled = true;
             this.comboOrigine.Location = new System.Drawing.Point(85, 115);
             this.comboOrigine.Name = "comboOrigine";
@@ -234,6 +238,7 @@ namespace Torrefazione
             // 
             this.comboTipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Location = new System.Drawing.Point(85, 142);
             this.comboTipo.Name = "comboTipo";
@@ -263,6 +268,11 @@ namespace Torrefazione
             this.numericNumSacchi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.numericNumSacchi.Location = new System.Drawing.Point(85, 195);
+            this.numericNumSacchi.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericNumSacchi.Name = "numericNumSacchi";
             this.numericNumSacchi.Size = new System.Drawing.Size(580, 20);
             this.numericNumSacchi.TabIndex = 18;
@@ -272,19 +282,25 @@ namespace Torrefazione
             this.numericKgNetti.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.numericKgNetti.Location = new System.Drawing.Point(85, 221);
+            this.numericKgNetti.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericKgNetti.Name = "numericKgNetti";
             this.numericKgNetti.Size = new System.Drawing.Size(580, 20);
             this.numericKgNetti.TabIndex = 19;
             // 
-            // button3
+            // buttonTipo
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(551, 142);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonTipo.Location = new System.Drawing.Point(551, 142);
+            this.buttonTipo.Name = "buttonTipo";
+            this.buttonTipo.Size = new System.Drawing.Size(114, 23);
+            this.buttonTipo.TabIndex = 20;
+            this.buttonTipo.Text = "Aggiungi Tipo";
+            this.buttonTipo.UseVisualStyleBackColor = true;
+            this.buttonTipo.Click += new System.EventHandler(this.buttonTipo_Click);
             // 
             // groupAggiungi
             // 
@@ -292,7 +308,7 @@ namespace Torrefazione
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupAggiungi.Controls.Add(this.buttonAggiungi);
             this.groupAggiungi.Controls.Add(this.labelData);
-            this.groupAggiungi.Controls.Add(this.button3);
+            this.groupAggiungi.Controls.Add(this.buttonTipo);
             this.groupAggiungi.Controls.Add(this.comboTipo);
             this.groupAggiungi.Controls.Add(this.labelOrgine);
             this.groupAggiungi.Controls.Add(this.buttonVenditore);
@@ -303,7 +319,7 @@ namespace Torrefazione
             this.groupAggiungi.Controls.Add(this.textNumFattura);
             this.groupAggiungi.Controls.Add(this.dataPicker);
             this.groupAggiungi.Controls.Add(this.labelTipo);
-            this.groupAggiungi.Controls.Add(this.button2);
+            this.groupAggiungi.Controls.Add(this.buttonOrigine);
             this.groupAggiungi.Controls.Add(this.labelNumFattura);
             this.groupAggiungi.Controls.Add(this.labelSacchi);
             this.groupAggiungi.Controls.Add(this.comboVenditore);
@@ -440,7 +456,6 @@ namespace Torrefazione
             this.Controls.Add(this.groupAggiungi);
             this.Name = "ApprovvigionamentiForm";
             this.Text = "Approvvigionamenti";
-            this.Load += new System.EventHandler(this.ApprovvigionamentiForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericNumSacchi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericKgNetti)).EndInit();
             this.groupAggiungi.ResumeLayout(false);
@@ -457,7 +472,7 @@ namespace Torrefazione
         #endregion
 
         private System.Windows.Forms.Button buttonVenditore;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonOrigine;
         private System.Windows.Forms.Label labelVenditore;
         private System.Windows.Forms.Label labelNumFattura;
         private System.Windows.Forms.Label labelDataFattura;
@@ -476,7 +491,7 @@ namespace Torrefazione
         private System.Windows.Forms.TextBox textMarche;
         private System.Windows.Forms.NumericUpDown numericNumSacchi;
         private System.Windows.Forms.NumericUpDown numericKgNetti;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonTipo;
         private System.Windows.Forms.GroupBox groupAggiungi;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;

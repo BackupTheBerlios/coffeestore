@@ -8,37 +8,37 @@ using System.Windows.Forms;
 
 namespace Torrefazione
 {
-    public partial class VenditoriForm : Form
+    public partial class TipiForm : Form
     {
-        private string _venditore;
+        private string _tipo;
 
-        public VenditoriForm()
+        public TipiForm()
         {
-            _venditore = "";
+            _tipo = "";
             InitializeComponent();
-        }
+        }      
 
         private void buttonAggiungi_Click(object sender, EventArgs e)
         {
-            if (textBoxVenditore.Text.Length == 0)
+            if (textBoxTipo.Text.Length == 0)
             {
                 MessageBox.Show("Elementi vuoti non validi");
                 return;
             }
 
-            if (Db.GetVenditore(textBoxVenditore.Text) != null)
-                MessageBox.Show("Db inconsistente: Venditore {" + textBoxVenditore.Text + "}");
+            if (Db.GetTipo(textBoxTipo.Text) != null)
+                MessageBox.Show("Db inconsistente: Tipo {" + textBoxTipo.Text + "}");
             else
             {
-                _venditore = textBoxVenditore.Text;
-                Db.Set(new Venditore(_venditore));
+                _tipo = textBoxTipo.Text;
+                Db.Set(new Tipo(_tipo));
                 Close();
             }
         }
 
-        public string Venditore
+        public string Tipo
         {
-            get { return _venditore; }
+            get { return _tipo; }
         }
     }
 }
