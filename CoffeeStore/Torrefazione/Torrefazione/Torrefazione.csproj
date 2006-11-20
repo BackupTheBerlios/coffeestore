@@ -28,9 +28,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="db4o, Version=5.5.1.0, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+    <Reference Include="db4o, Version=5.2.8.0, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Programmi\db4o-5.5\dll\net\db4o.dll</HintPath>
+      <HintPath>lib\db4o.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -94,6 +94,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>TipiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TostaturaForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TostaturaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VenditoriForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>VenditoriForm.cs</DependentUpon>
@@ -117,6 +121,13 @@
     </Compile>
     <Compile Include="TipiForm.Designer.cs">
       <DependentUpon>TipiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tostatura.cs" />
+    <Compile Include="TostaturaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TostaturaForm.Designer.cs">
+      <DependentUpon>TostaturaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ValueHolder.cs" />
     <Compile Include="VenditoriForm.cs">
