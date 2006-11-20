@@ -13,10 +13,10 @@ namespace Torrefazione
     public partial class ApprovvigionamentiView : Form
     {
         ApprovvigionamentoDataBinder _dataBinder;
-
-        ToolStripMenuItem _eliminaRowToolStripMenuItem;
-        bool _eliminaRowToolStripMenuItemPopulated;
-        int _eliminaClickedRow;
+        ToolStripMenuItem _eliminaToolStripMenuItem;
+        ToolStripMenuItem _scaricaToolStripMenuItem;
+        bool _toolStripMenuActive;
+        int _rowClicked;
 
         public ApprovvigionamentiView()
         {
@@ -28,28 +28,33 @@ namespace Torrefazione
 
         private void InitToolStripMenu()
         {
-            _eliminaRowToolStripMenuItemPopulated = false;
-            _eliminaRowToolStripMenuItem = new ToolStripMenuItem();
-            _eliminaRowToolStripMenuItem.Text = "Elimina";
-            _eliminaRowToolStripMenuItem.Click += new EventHandler(eliminaClicked);
-            _eliminaClickedRow = -1;
-        }       
+            _toolStripMenuActive = false;
+            _eliminaToolStripMenuItem = new ToolStripMenuItem();
+            _eliminaToolStripMenuItem.Text = "Elimina";
+            _eliminaToolStripMenuItem.Click += new EventHandler(eliminaClicked);
+
+            _scaricaToolStripMenuItem = new ToolStripMenuItem();
+            _scaricaToolStripMenuItem.Text = "Scarica";
+            _scaricaToolStripMenuItem.Click += new EventHandler(scaricaClicked);
+
+            _rowClicked = -1;
+        }
 
         private void RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            _eliminaClickedRow = e.RowIndex;
+            _rowClicked = e.RowIndex;
 
-            if (e.Button == MouseButtons.Left && !_eliminaRowToolStripMenuItemPopulated)
+            if (e.Button == MouseButtons.Left && !_toolStripMenuActive)
             {
-                _eliminaRowToolStripMenuItemPopulated = true;
-                contextMenuStrip.Items.AddRange(new ToolStripItem[] { _eliminaRowToolStripMenuItem });
+                _toolStripMenuActive = true;
+                contextMenuStrip.Items.AddRange(new ToolStripItem[] { _eliminaToolStripMenuItem, _scaricaToolStripMenuItem });
             }
         }
 
         private void ClearContext(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             contextMenuStrip.Items.Clear();
-            _eliminaRowToolStripMenuItemPopulated = false;
+            _toolStripMenuActive = false;
         }
 
         private void FillField(Approvvigionamento appr, object value, string property)
@@ -73,14 +78,7 @@ namespace Torrefazione
 
         private void eliminaClicked(object sender, EventArgs e)
         {
-            Approvvigionamento appr = new Approvvigionamento();
-            IEnumerator enumerator = dataGridView.Rows[_eliminaClickedRow].Cells.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell) enumerator.Current;
-                FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);
-            }
-
+            Approvvigionamento appr = GetSelectedApprovvigionamento();
             if (Db.Del(appr))
             {
                 MessageBox.Show("Approvvigionamento eliminato");
@@ -88,6 +86,24 @@ namespace Torrefazione
             }
             else
                 MessageBox.Show("Impossibile eliminare l'approvvigionamento selezionato");
+        }
+
+        private Approvvigionamento GetSelectedApprovvigionamento()
+        {
+            Approvvigionamento appr = new Approvvigionamento();
+            IEnumerator enumerator = dataGridView.Rows[_rowClicked].Cells.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)enumerator.Current;
+                FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);
+            }
+            return appr;
+        }
+
+        private void scaricaClicked(object sender, EventArgs e)
+        {
+            Approvvigionamento appr = new Approvvigionamento();
+
         }
 
         private void RefreshDataGrid()

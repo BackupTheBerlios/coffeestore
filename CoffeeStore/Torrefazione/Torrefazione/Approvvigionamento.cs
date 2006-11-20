@@ -31,6 +31,38 @@ namespace Torrefazione
         }
     }
 
+    public class Scarico
+    {
+        DateTime _data;
+        int _sacchi;
+        int _kgNetti;
+
+        public Scarico(DateTime data, int sacchi, int kgNetti)
+        {
+            _data = data;
+            _sacchi = sacchi;
+            _kgNetti = kgNetti;
+        }
+
+        public DateTime data
+        {
+            get { return _data; }
+            set { _data = value; }            
+        }
+
+        public int Sacchi
+        {
+            get { return _sacchi; }
+            set { _sacchi = value; }
+        }
+
+        public int KgNetti
+        {
+            get { return _kgNetti; }
+            set { _kgNetti = value; }
+        }
+    }
+
     public class Approvvigionamento
     {
         DateTime _data;
@@ -42,9 +74,13 @@ namespace Torrefazione
         string _marche;
         int _sacchi;
         int _kgNetti;
+        int _sacchiRimanenti;
+        int _kgRimanenti;
+        
+        ICollection<Scarico> _scarichi;
 
         public Approvvigionamento()
-        { 
+        {
 
         }
 
@@ -59,6 +95,19 @@ namespace Torrefazione
             _marche = marche;
             _sacchi = sacchi;
             _kgNetti = kgNetti;
+            _scarichi = new List<Scarico>();
+        }
+
+        public bool AddScarico(Scarico scarico)
+        {
+            if (scarico.KgNetti <= _kgRimanenti && scarico.Sacchi <= _sacchi)
+            {
+                _kgRimanenti -= scarico.KgNetti;
+                _sacchiRimanenti -= scarico.Sacchi;
+                _scarichi.Add(scarico);
+                return true;
+            }
+            return false;
         }
 
         public DateTime Data
