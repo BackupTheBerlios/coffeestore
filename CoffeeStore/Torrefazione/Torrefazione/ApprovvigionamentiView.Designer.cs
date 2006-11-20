@@ -32,6 +32,9 @@ namespace Torrefazione
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.KgRimanenti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SacchiRimanenti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.venditoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numFatturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +45,6 @@ namespace Torrefazione
             this.sacchiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kgNettiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.approvvigionamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).BeginInit();
@@ -51,11 +53,14 @@ namespace Torrefazione
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.KgRimanenti,
+            this.SacchiRimanenti,
             this.dataDataGridViewTextBoxColumn,
             this.venditoreDataGridViewTextBoxColumn,
             this.numFatturaDataGridViewTextBoxColumn,
@@ -89,6 +94,25 @@ namespace Torrefazione
             this.statusStrip.Size = new System.Drawing.Size(696, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // KgRimanenti
+            // 
+            this.KgRimanenti.DataPropertyName = "KgRimanenti";
+            this.KgRimanenti.HeaderText = "KgRimanenti";
+            this.KgRimanenti.Name = "KgRimanenti";
+            this.KgRimanenti.ReadOnly = true;
+            // 
+            // SacchiRimanenti
+            // 
+            this.SacchiRimanenti.DataPropertyName = "SacchiRimanenti";
+            this.SacchiRimanenti.HeaderText = "SacchiRimanenti";
+            this.SacchiRimanenti.Name = "SacchiRimanenti";
+            this.SacchiRimanenti.ReadOnly = true;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -157,11 +181,6 @@ namespace Torrefazione
             // 
             this.approvvigionamentoBindingSource.DataSource = typeof(Torrefazione.Approvvigionamento);
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
             // ApprovvigionamentiView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +202,10 @@ namespace Torrefazione
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.BindingSource approvvigionamentoBindingSource;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn venditoreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numFatturaDataGridViewTextBoxColumn;
@@ -192,9 +215,7 @@ namespace Torrefazione
         private System.Windows.Forms.DataGridViewTextBoxColumn marcheDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sacchiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kgNettiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource approvvigionamentoBindingSource;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KgRimanenti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SacchiRimanenti;
     }
 }

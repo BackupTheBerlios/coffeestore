@@ -14,7 +14,9 @@ namespace Torrefazione
     {
         ApprovvigionamentoDataBinder _dataBinder;
         ToolStripMenuItem _eliminaToolStripMenuItem;
-        ToolStripMenuItem _scaricaToolStripMenuItem;
+        ToolStripMenuItem _effettuaScaricoToolStripMenuItem;
+        ToolStripMenuItem _visualizzaScarichiToolStripMenuItem;
+
         bool _toolStripMenuActive;
         int _rowClicked;
 
@@ -33,9 +35,13 @@ namespace Torrefazione
             _eliminaToolStripMenuItem.Text = "Elimina";
             _eliminaToolStripMenuItem.Click += new EventHandler(eliminaClicked);
 
-            _scaricaToolStripMenuItem = new ToolStripMenuItem();
-            _scaricaToolStripMenuItem.Text = "Scarica";
-            _scaricaToolStripMenuItem.Click += new EventHandler(scaricaClicked);
+            _effettuaScaricoToolStripMenuItem = new ToolStripMenuItem();
+            _effettuaScaricoToolStripMenuItem.Text = "Effettua Scarico";
+            _effettuaScaricoToolStripMenuItem.Click += new EventHandler(scaricaClicked);
+
+            _visualizzaScarichiToolStripMenuItem = new ToolStripMenuItem();
+            _visualizzaScarichiToolStripMenuItem.Text = "Visualizza Scarichi";
+            _visualizzaScarichiToolStripMenuItem.Click += new EventHandler(visualizzaScarichiClicked);
 
             _rowClicked = -1;
         }
@@ -47,7 +53,7 @@ namespace Torrefazione
             if (e.Button == MouseButtons.Left && !_toolStripMenuActive)
             {
                 _toolStripMenuActive = true;
-                contextMenuStrip.Items.AddRange(new ToolStripItem[] { _eliminaToolStripMenuItem, _scaricaToolStripMenuItem });
+                contextMenuStrip.Items.AddRange(new ToolStripItem[] { _eliminaToolStripMenuItem, _effettuaScaricoToolStripMenuItem, _visualizzaScarichiToolStripMenuItem });
             }
         }
 
@@ -102,8 +108,13 @@ namespace Torrefazione
 
         private void scaricaClicked(object sender, EventArgs e)
         {
-            Approvvigionamento appr = new Approvvigionamento();
+            Approvvigionamento appr = GetSelectedApprovvigionamento();
+            new TostaturaForm().ShowDialog();
+        }
 
+        private void visualizzaScarichiClicked(object sender, EventArgs e)
+        {
+            Approvvigionamento appr = GetSelectedApprovvigionamento();
         }
 
         private void RefreshDataGrid()

@@ -96,6 +96,8 @@ namespace Torrefazione
             _sacchi = sacchi;
             _kgNetti = kgNetti;
             _scarichi = new List<Scarico>();
+            _kgRimanenti = _kgNetti;
+            _sacchiRimanenti = _sacchi;
         }
 
         public bool AddScarico(Scarico scarico)
@@ -162,6 +164,18 @@ namespace Torrefazione
         {
             get { return _kgNetti; }
             set { _kgNetti = value; }
+        }
+
+        public int KgRimanenti
+        {
+            get { return _kgRimanenti; }
+            set { _kgRimanenti = value; }
+        }
+
+        public int SacchiRimanenti
+        {
+            get { return _sacchiRimanenti; }
+            set { _sacchiRimanenti = value; }
         }
     }
 }
