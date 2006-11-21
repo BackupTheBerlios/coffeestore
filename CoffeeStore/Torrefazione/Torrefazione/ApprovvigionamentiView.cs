@@ -98,8 +98,10 @@ namespace Torrefazione
 
         private void scaricaClicked(object sender, EventArgs e)
         {
+            //ApprovvigionamentiView.cs
             Approvvigionamento appr = GetSelectedApprovvigionamento();
-            new TostaturaForm().ShowDialog();
+            TostaturaForm tost = new TostaturaForm(appr);
+            tost.ShowDialog();
         }
 
         private void visualizzaScarichiClicked(object sender, EventArgs e)
