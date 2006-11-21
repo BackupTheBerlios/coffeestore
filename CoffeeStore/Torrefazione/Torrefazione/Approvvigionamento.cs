@@ -44,7 +44,7 @@ namespace Torrefazione
             _kgNetti = kgNetti;
         }
 
-        public DateTime data
+        public DateTime Data
         {
             get { return _data; }
             set { _data = value; }            
@@ -77,7 +77,7 @@ namespace Torrefazione
         int _sacchiRimanenti;
         int _kgRimanenti;
         
-        ICollection<Scarico> _scarichi;
+        IList<Scarico> _scarichi;
 
         public Approvvigionamento()
         {
@@ -110,6 +110,11 @@ namespace Torrefazione
                 return true;
             }
             return false;
+        }
+
+        public IList<Scarico> Scarichi
+        {
+            get { return _scarichi; }
         }
 
         public DateTime Data

@@ -13,12 +13,7 @@ namespace Torrefazione
     public partial class ApprovvigionamentiView : Form
     {
         ApprovvigionamentoDataBinder _dataBinder;
-        ToolStripMenuItem _eliminaToolStripMenuItem;
-        ToolStripMenuItem _effettuaScaricoToolStripMenuItem;
-        ToolStripMenuItem _visualizzaScarichiToolStripMenuItem;
-
-        bool _toolStripMenuActive;
-        int _rowClicked;
+        ToolStripDataGridMenu _toolStripMenu;
 
         public ApprovvigionamentiView()
         {
@@ -30,37 +25,32 @@ namespace Torrefazione
 
         private void InitToolStripMenu()
         {
-            _toolStripMenuActive = false;
-            _eliminaToolStripMenuItem = new ToolStripMenuItem();
-            _eliminaToolStripMenuItem.Text = "Elimina";
-            _eliminaToolStripMenuItem.Click += new EventHandler(eliminaClicked);
+            _toolStripMenu = new ToolStripDataGridMenu(contextMenuStrip, dataGridView);
 
-            _effettuaScaricoToolStripMenuItem = new ToolStripMenuItem();
-            _effettuaScaricoToolStripMenuItem.Text = "Effettua Scarico";
-            _effettuaScaricoToolStripMenuItem.Click += new EventHandler(scaricaClicked);
+            ToolStripMenuItem elimina = new ToolStripMenuItem();
+            elimina.Text = "Elimina";
+            elimina.Click += new EventHandler(eliminaClicked);
 
-            _visualizzaScarichiToolStripMenuItem = new ToolStripMenuItem();
-            _visualizzaScarichiToolStripMenuItem.Text = "Visualizza Scarichi";
-            _visualizzaScarichiToolStripMenuItem.Click += new EventHandler(visualizzaScarichiClicked);
+            ToolStripMenuItem scarica = new ToolStripMenuItem();
+            scarica.Text = "Effettua Scarico";
+            scarica.Click += new EventHandler(scaricaClicked);
 
-            _rowClicked = -1;
+            ToolStripMenuItem viewScarichi = new ToolStripMenuItem();
+            viewScarichi.Text = "Visualizza Scarichi";
+            viewScarichi.Click += new EventHandler(visualizzaScarichiClicked);
+
+            ToolStripMenuItem[] items = new ToolStripMenuItem[] { elimina, scarica, viewScarichi };
+            _toolStripMenu.SetItems(items);
         }
 
         private void RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            _rowClicked = e.RowIndex;
-
-            if (e.Button == MouseButtons.Left && !_toolStripMenuActive)
-            {
-                _toolStripMenuActive = true;
-                contextMenuStrip.Items.AddRange(new ToolStripItem[] { _eliminaToolStripMenuItem, _effettuaScaricoToolStripMenuItem, _visualizzaScarichiToolStripMenuItem });
-            }
+            _toolStripMenu.OnRowHeaderMouseClick(e);
         }
 
         private void ClearContext(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            contextMenuStrip.Items.Clear();
-            _toolStripMenuActive = false;
+            _toolStripMenu.Clear();
         }
 
         private void FillField(Approvvigionamento appr, object value, string property)
@@ -97,8 +87,8 @@ namespace Torrefazione
         private Approvvigionamento GetSelectedApprovvigionamento()
         {
             Approvvigionamento appr = new Approvvigionamento();
-            IEnumerator enumerator = dataGridView.Rows[_rowClicked].Cells.GetEnumerator();
-            while (enumerator.MoveNext())
+            IEnumerator enumerator = _toolStripMenu.GetSelectedRowEnumerator();
+            if (enumerator.MoveNext())
             {
                 DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)enumerator.Current;
                 FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);

@@ -90,6 +90,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScarichiView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScarichiView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipiForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>TipiForm.cs</DependentUpon>
@@ -107,6 +111,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\Approvvigionamento.datasource" />
+    <None Include="Properties\DataSources\Scarico.datasource" />
+    <None Include="Properties\DataSources\Scarico1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,12 +122,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ScarichiView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScarichiView.Designer.cs">
+      <DependentUpon>ScarichiView.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipiForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TipiForm.Designer.cs">
       <DependentUpon>TipiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolStripDataGridMenu.cs" />
     <Compile Include="Tostatura.cs" />
     <Compile Include="TostaturaForm.cs">
       <SubType>Form</SubType>
