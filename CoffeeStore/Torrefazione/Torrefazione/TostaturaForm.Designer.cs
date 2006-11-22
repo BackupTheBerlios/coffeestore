@@ -29,6 +29,8 @@ namespace Torrefazione
         private void InitializeComponent()
         {
             this.toastGroupBox = new System.Windows.Forms.GroupBox();
+            this.resetbutton = new System.Windows.Forms.Button();
+            this.okbutton = new System.Windows.Forms.Button();
             this.apprlabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@ namespace Torrefazione
             this.label1 = new System.Windows.Forms.Label();
             this.toastedkg = new System.Windows.Forms.NumericUpDown();
             this.silos = new System.Windows.Forms.NumericUpDown();
-            this.okbutton = new System.Windows.Forms.Button();
-            this.resetbutton = new System.Windows.Forms.Button();
             this.toastGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbags)).BeginInit();
@@ -66,6 +66,26 @@ namespace Torrefazione
             this.toastGroupBox.TabIndex = 1;
             this.toastGroupBox.TabStop = false;
             this.toastGroupBox.Text = "Tostatura caffè";
+            // 
+            // resetbutton
+            // 
+            this.resetbutton.Location = new System.Drawing.Point(452, 243);
+            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Size = new System.Drawing.Size(75, 23);
+            this.resetbutton.TabIndex = 9;
+            this.resetbutton.Text = "Annulla";
+            this.resetbutton.UseVisualStyleBackColor = true;
+            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
+            // 
+            // okbutton
+            // 
+            this.okbutton.Location = new System.Drawing.Point(371, 243);
+            this.okbutton.Name = "okbutton";
+            this.okbutton.Size = new System.Drawing.Size(75, 23);
+            this.okbutton.TabIndex = 8;
+            this.okbutton.Text = "OK";
+            this.okbutton.UseVisualStyleBackColor = true;
+            this.okbutton.Click += new System.EventHandler(this.okbutton_Click);
             // 
             // apprlabel
             // 
@@ -149,6 +169,7 @@ namespace Torrefazione
             this.coffeekg.Size = new System.Drawing.Size(175, 20);
             this.coffeekg.TabIndex = 11;
             this.coffeekg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.coffeekg.ValueChanged += new System.EventHandler(this.coffeekg_ValueChanged);
             // 
             // label3
             // 
@@ -207,26 +228,6 @@ namespace Torrefazione
             this.silos.Size = new System.Drawing.Size(175, 20);
             this.silos.TabIndex = 7;
             this.silos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // okbutton
-            // 
-            this.okbutton.Location = new System.Drawing.Point(371, 243);
-            this.okbutton.Name = "okbutton";
-            this.okbutton.Size = new System.Drawing.Size(75, 23);
-            this.okbutton.TabIndex = 8;
-            this.okbutton.Text = "OK";
-            this.okbutton.UseVisualStyleBackColor = true;
-            this.okbutton.Click += new System.EventHandler(this.okbutton_Click);
-            // 
-            // resetbutton
-            // 
-            this.resetbutton.Location = new System.Drawing.Point(452, 243);
-            this.resetbutton.Name = "resetbutton";
-            this.resetbutton.Size = new System.Drawing.Size(75, 23);
-            this.resetbutton.TabIndex = 9;
-            this.resetbutton.Text = "Annulla";
-            this.resetbutton.UseVisualStyleBackColor = true;
-            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
             // 
             // TostaturaForm
             // 

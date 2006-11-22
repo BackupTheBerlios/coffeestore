@@ -88,7 +88,7 @@ namespace Torrefazione
         {
             Approvvigionamento appr = new Approvvigionamento();
             IEnumerator enumerator = _toolStripMenu.GetSelectedRowEnumerator();
-            if (enumerator.MoveNext())
+            while (enumerator.MoveNext())
             {
                 DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)enumerator.Current;
                 FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);

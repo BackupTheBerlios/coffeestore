@@ -76,12 +76,13 @@ namespace Torrefazione
         int _kgNetti;
         int _sacchiRimanenti;
         int _kgRimanenti;
-        
+        //bool _initlist;
+
         IList<Scarico> _scarichi;
 
         public Approvvigionamento()
         {
-
+            _scarichi = new List<Scarico>();
         }
 
         public Approvvigionamento(DateTime data, Venditore venditore, string numFattura, DateTime dataFattura, Origine origine, Tipo tipo, String marche, int sacchi, int kgNetti)
@@ -102,6 +103,7 @@ namespace Torrefazione
 
         public bool AddScarico(Scarico scarico)
         {
+
             if (scarico.KgNetti <= _kgRimanenti && scarico.Sacchi <= _sacchi)
             {
                 _kgRimanenti -= scarico.KgNetti;

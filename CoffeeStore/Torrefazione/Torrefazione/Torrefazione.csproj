@@ -102,6 +102,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>TostaturaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TostaturaView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TostaturaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VenditoriForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>VenditoriForm.cs</DependentUpon>
@@ -110,6 +114,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\Approvvigionamento.datasource" />
     <None Include="Properties\DataSources\Scarico.datasource" />
     <None Include="Properties\DataSources\Scarico1.datasource" />
@@ -141,6 +146,12 @@
     </Compile>
     <Compile Include="TostaturaForm.Designer.cs">
       <DependentUpon>TostaturaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TostaturaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TostaturaView.Designer.cs">
+      <DependentUpon>TostaturaView.cs</DependentUpon>
     </Compile>
     <Compile Include="ValueHolder.cs" />
     <Compile Include="VenditoriForm.cs">

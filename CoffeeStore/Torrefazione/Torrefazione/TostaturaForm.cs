@@ -17,31 +17,45 @@ namespace Torrefazione
             _appr = appr;
             InitializeComponent();
             apprlabel.Text = "Venditore: " + _appr.Venditore + " - Origine: " + _appr.Origine + " - Tipo: " + _appr.Tipo;
+            nbags.Maximum = _appr.Sacchi;
+            nbags.Minimum = 0;
+            coffeekg.Minimum = 0;
+            coffeekg.Maximum = _appr.KgRimanenti;
+            toastedkg.Minimum = 0;
+            //nbags.Value = 0;
         }
 
         private void nbags_ValueChanged(object sender, EventArgs e)
         {
-            nbags.Maximum = _appr.Sacchi;
-            nbags.Minimum = 0;
             if (nbags.Value < nbags.Maximum)
             {
-                nbags.Value = nbags.Value + 1;
+                int val = (int) nbags.Value;
                 int tmp = 70 * (int)nbags.Value;
-                if (tmp < _appr.KgNetti)
+                if (tmp < _appr.KgRimanenti)
+                {
                     coffeekg.Value = tmp;
+                    toastedkg.Maximum = tmp;
+                    toastedkg.Value = tmp;
+                }
             }
-
         }
 
         private void okbutton_Click(object sender, EventArgs e)
         {
-            _appr.AddScarico(new Scarico(toastdate.Value,(int) nbags.Value,(int) coffeekg.Value));
+            _appr.AddScarico(new Scarico(toastdate.Value,(int) nbags.Value,(int) toastedkg.Value));
+            Tostatura tost = new Tostatura(_appr, toastdate.Value, (int)nbags.Value, (int)coffeekg.Value, (int)toastedkg.Value, (int)silos.Value);
+            Db.Set<Tostatura>(tost);
             Close();
         }
 
         private void resetbutton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void coffeekg_ValueChanged(object sender, EventArgs e)
+        {
+            toastedkg.Maximum = coffeekg.Value;
         }
     }
 }

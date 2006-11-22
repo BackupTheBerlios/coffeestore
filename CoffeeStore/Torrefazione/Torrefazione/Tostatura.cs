@@ -11,12 +11,15 @@ namespace Torrefazione
         private int _toastedkg;
         private Approvvigionamento _appr;
         private DateTime _data;
+        private int _silos;
 
-        public Tostatura(Approvvigionamento appr, int originalkg, int toastedkg)
+        public Tostatura(Approvvigionamento appr,DateTime data,int bags,int originalkg, int toastedkg,int silos)
         {
             _originalkg = originalkg;
             _toastedkg = toastedkg;
             _appr = appr;
+            _data = data;
+            _bags = bags;
         }
 
         public int Bags 
@@ -48,5 +51,11 @@ namespace Torrefazione
             get {return _data;}
             set { _data = value; }
         }        
+
+        public int Silos
+        {
+            get { return _silos; }
+            set { _silos = value; }
+        }
     }
 }
