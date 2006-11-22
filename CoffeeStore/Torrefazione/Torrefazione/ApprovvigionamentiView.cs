@@ -93,7 +93,7 @@ namespace Torrefazione
                 DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)enumerator.Current;
                 FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);
             }
-            return appr;
+            return (Approvvigionamento) Db.GetUnique(appr);
         }
 
         private void scaricaClicked(object sender, EventArgs e)

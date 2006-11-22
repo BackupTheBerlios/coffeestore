@@ -76,13 +76,12 @@ namespace Torrefazione
         int _kgNetti;
         int _sacchiRimanenti;
         int _kgRimanenti;
-        //bool _initlist;
 
         IList<Scarico> _scarichi;
 
         public Approvvigionamento()
         {
-            _scarichi = new List<Scarico>();
+
         }
 
         public Approvvigionamento(DateTime data, Venditore venditore, string numFattura, DateTime dataFattura, Origine origine, Tipo tipo, String marche, int sacchi, int kgNetti)

@@ -43,6 +43,7 @@ namespace Torrefazione
         private void okbutton_Click(object sender, EventArgs e)
         {
             _appr.AddScarico(new Scarico(toastdate.Value,(int) nbags.Value,(int) toastedkg.Value));
+            Db.Set(_appr);
             Tostatura tost = new Tostatura(_appr, toastdate.Value, (int)nbags.Value, (int)coffeekg.Value, (int)toastedkg.Value, (int)silos.Value);
             Db.Set<Tostatura>(tost);
             Close();

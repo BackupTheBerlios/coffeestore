@@ -50,6 +50,15 @@ namespace Torrefazione
             return (T)objectSet.Next();
         }
 
+        public static object GetUnique(object obj)
+        {
+            ObjectSet objectSet = _data.Get(obj);
+            if (objectSet.Count == 0)
+                return null;
+
+            return objectSet.Next();
+        }
+
         public static Venditore GetVenditore(string value)
         {
             ObjectSet objectSet = _data.Get(new Venditore(value));
