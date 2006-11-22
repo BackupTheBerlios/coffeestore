@@ -57,5 +57,20 @@ namespace Torrefazione
             get { return _silos; }
             set { _silos = value; }
         }
+
+        public DateTime DataApprov
+        {
+            get { return _appr.Data; }
+        }
+
+        public Origine Orig
+        {
+            get { return _appr.Origine; }
+        }
+
+        public Tipo Tip
+        {
+            get { return _appr.Tipo; }
+        }
     }
 }
