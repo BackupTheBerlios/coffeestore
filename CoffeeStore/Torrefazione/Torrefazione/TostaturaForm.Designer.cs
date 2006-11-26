@@ -233,7 +233,7 @@ namespace Torrefazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 309);
+            this.ClientSize = new System.Drawing.Size(585, 316);
             this.Controls.Add(this.toastGroupBox);
             this.MaximumSize = new System.Drawing.Size(593, 343);
             this.MinimumSize = new System.Drawing.Size(593, 343);

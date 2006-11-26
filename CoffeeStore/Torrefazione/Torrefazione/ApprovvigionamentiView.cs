@@ -93,14 +93,15 @@ namespace Torrefazione
                 DataGridViewTextBoxCell cell = (DataGridViewTextBoxCell)enumerator.Current;
                 FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);
             }
-            return (Approvvigionamento) Db.GetUnique(appr);
+            return appr;
         }
 
         private void scaricaClicked(object sender, EventArgs e)
         {
-            Approvvigionamento appr = GetSelectedApprovvigionamento();
+            Approvvigionamento appr = (Approvvigionamento)Db.GetUnique(GetSelectedApprovvigionamento());
             TostaturaForm tost = new TostaturaForm(appr);
             tost.ShowDialog();
+            Db.Set(appr);
         }
 
         private void visualizzaScarichiClicked(object sender, EventArgs e)

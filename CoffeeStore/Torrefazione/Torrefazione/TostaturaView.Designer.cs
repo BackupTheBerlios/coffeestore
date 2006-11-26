@@ -125,7 +125,6 @@ namespace Torrefazione
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource tostaturaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataApprov;
         private System.Windows.Forms.DataGridViewTextBoxColumn Orig;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;

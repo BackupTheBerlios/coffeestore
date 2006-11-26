@@ -15,14 +15,24 @@ namespace Torrefazione
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void esciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void approvvigionamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ApprovvigionamentiForm().ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void approvvigionamentoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new ApprovvigionamentiView().ShowDialog();
+        }
+
+        private void miscelaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Form3().ShowDialog();
         }
     }
 }

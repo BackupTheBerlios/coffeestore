@@ -31,9 +31,9 @@ namespace Torrefazione
             this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.approvvigionamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.approvvigionamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.venditoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numFatturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +43,11 @@ namespace Torrefazione
             this.marcheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sacchiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kgNettiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KgRimanenti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SacchiRimanenti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KgRimanenti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).BeginInit();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -69,8 +69,8 @@ namespace Torrefazione
             this.marcheDataGridViewTextBoxColumn,
             this.sacchiDataGridViewTextBoxColumn,
             this.kgNettiDataGridViewTextBoxColumn,
-            this.KgRimanenti,
-            this.SacchiRimanenti});
+            this.SacchiRimanenti,
+            this.KgRimanenti});
             this.dataGridView.ContextMenuStrip = this.contextMenuStrip;
             this.dataGridView.DataSource = this.approvvigionamentoBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
@@ -86,6 +86,10 @@ namespace Torrefazione
             this.contextMenuStrip.Name = "contextMenuStrip1";
             this.contextMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
+            // approvvigionamentoBindingSource
+            // 
+            this.approvvigionamentoBindingSource.DataSource = typeof(Torrefazione.Approvvigionamento);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -100,10 +104,6 @@ namespace Torrefazione
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // approvvigionamentoBindingSource
-            // 
-            this.approvvigionamentoBindingSource.DataSource = typeof(Torrefazione.Approvvigionamento);
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -168,19 +168,19 @@ namespace Torrefazione
             this.kgNettiDataGridViewTextBoxColumn.Name = "kgNettiDataGridViewTextBoxColumn";
             this.kgNettiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // KgRimanenti
-            // 
-            this.KgRimanenti.DataPropertyName = "KgRimanenti";
-            this.KgRimanenti.HeaderText = "KgRimanenti";
-            this.KgRimanenti.Name = "KgRimanenti";
-            this.KgRimanenti.ReadOnly = true;
-            // 
             // SacchiRimanenti
             // 
             this.SacchiRimanenti.DataPropertyName = "SacchiRimanenti";
             this.SacchiRimanenti.HeaderText = "SacchiRimanenti";
             this.SacchiRimanenti.Name = "SacchiRimanenti";
             this.SacchiRimanenti.ReadOnly = true;
+            // 
+            // KgRimanenti
+            // 
+            this.KgRimanenti.DataPropertyName = "KgRimanenti";
+            this.KgRimanenti.HeaderText = "KgRimanenti";
+            this.KgRimanenti.Name = "KgRimanenti";
+            this.KgRimanenti.ReadOnly = true;
             // 
             // ApprovvigionamentiView
             // 
@@ -192,9 +192,9 @@ namespace Torrefazione
             this.Name = "ApprovvigionamentiView";
             this.Text = "ApprovvigionamentiView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +216,7 @@ namespace Torrefazione
         private System.Windows.Forms.DataGridViewTextBoxColumn marcheDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sacchiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kgNettiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KgRimanenti;
         private System.Windows.Forms.DataGridViewTextBoxColumn SacchiRimanenti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KgRimanenti;
     }
 }

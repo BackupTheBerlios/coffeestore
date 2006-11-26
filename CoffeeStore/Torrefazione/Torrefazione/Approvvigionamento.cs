@@ -77,7 +77,7 @@ namespace Torrefazione
         int _sacchiRimanenti;
         int _kgRimanenti;
 
-        IList<Scarico> _scarichi;
+        List<Scarico> _scarichi;
 
         public Approvvigionamento()
         {
@@ -102,7 +102,6 @@ namespace Torrefazione
 
         public bool AddScarico(Scarico scarico)
         {
-
             if (scarico.KgNetti <= _kgRimanenti && scarico.Sacchi <= _sacchi)
             {
                 _kgRimanenti -= scarico.KgNetti;
