@@ -44,7 +44,6 @@ namespace Torrefazione
         {
             _appr.AddScarico(new Scarico(toastdate.Value,(int) nbags.Value,(int) toastedkg.Value));
             Tostatura tost = new Tostatura(_appr, toastdate.Value.Date, (int)nbags.Value, (int)coffeekg.Value, (int)toastedkg.Value, (int)silos.Value);
-            Db.Set<Tostatura>(tost);
             Close();
         }
 

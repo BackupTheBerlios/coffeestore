@@ -271,7 +271,7 @@ namespace Torrefazione
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(322, 105);
+            this.label7.Location = new System.Drawing.Point(279, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 27;
@@ -288,7 +288,7 @@ namespace Torrefazione
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(325, 134);
+            this.numericUpDown5.Location = new System.Drawing.Point(282, 127);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown5.TabIndex = 23;

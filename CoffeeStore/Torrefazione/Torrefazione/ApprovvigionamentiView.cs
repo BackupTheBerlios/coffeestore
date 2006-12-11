@@ -101,12 +101,14 @@ namespace Torrefazione
             Approvvigionamento appr = (Approvvigionamento)Db.GetUnique(GetSelectedApprovvigionamento());
             TostaturaForm tost = new TostaturaForm(appr);
             tost.ShowDialog();
+            Db.Set(appr.Scarichi);
             Db.Set(appr);
+            Db.viewApprovvigionamenti();
         }
 
         private void visualizzaScarichiClicked(object sender, EventArgs e)
         {
-            Approvvigionamento appr = GetSelectedApprovvigionamento();
+            Approvvigionamento appr = (Approvvigionamento)Db.GetUnique(GetSelectedApprovvigionamento());
             new ScarichiView(appr).ShowDialog();
         }
 

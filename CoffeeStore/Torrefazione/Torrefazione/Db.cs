@@ -25,6 +25,14 @@ namespace Torrefazione
             _data.Set(obj);
         }
 
+        public static void viewApprovvigionamenti()
+        {
+            foreach (Approvvigionamento app in _data.Query<Approvvigionamento>(typeof(Approvvigionamento)))
+            {
+                
+            }
+        }
+
         public static IList<T> GetAll<T>()
         {
             return _data.Query<T>(typeof(T));
