@@ -56,25 +56,19 @@ namespace Torrefazione
         private void FillField(Approvvigionamento appr, object value, string property)
         {
             PropertyInfo propertyInfo = appr.GetType().GetProperty(property);
-            Type type = value.GetType();
-
-            if (type.Equals(typeof(DateTime)))
-                propertyInfo.SetValue(appr, value, null);
-            else if (type.Equals(typeof(string)))
-                propertyInfo.SetValue(appr, value, null);
-            else if (type.Equals(typeof(int)))
-                propertyInfo.SetValue(appr, value, null);
-            else if (type.Equals(typeof(Venditore)))
-                propertyInfo.SetValue(appr, value, null);
-            else if (type.Equals(typeof(Tipo)))
-                propertyInfo.SetValue(appr, value, null);
-            else if (type.Equals(typeof(Origine)))
-                propertyInfo.SetValue(appr, value, null);
+            propertyInfo.SetValue(appr, value, null);
         }
 
         private void eliminaClicked(object sender, EventArgs e)
         {
             Approvvigionamento appr = GetSelectedApprovvigionamento();
+            Form confirm = new ConfirmDialog("Vuoi veramente eliminare l'approvvigionamento selezionato?");
+            if (confirm.ShowDialog() == DialogResult.OK)
+                eliminaApprovvigionamento(appr);
+        }
+
+        private void eliminaApprovvigionamento(Approvvigionamento appr)
+        {
             if (Db.Del(appr))
             {
                 MessageBox.Show("Approvvigionamento eliminato");
@@ -99,11 +93,16 @@ namespace Torrefazione
         private void scaricaClicked(object sender, EventArgs e)
         {
             Approvvigionamento appr = (Approvvigionamento)Db.GetUnique(GetSelectedApprovvigionamento());
+
+            if (appr.SacchiRimanenti <= 0 || appr.KgRimanenti <= 0)
+            {
+                MessageBox.Show("Il caffe' e' finito!");
+                return;
+            }
             TostaturaForm tost = new TostaturaForm(appr);
             tost.ShowDialog();
             Db.Set(appr.Scarichi);
             Db.Set(appr);
-            Db.viewApprovvigionamenti();
         }
 
         private void visualizzaScarichiClicked(object sender, EventArgs e)

@@ -6,38 +6,30 @@ namespace Torrefazione
 {
     class Tostatura
     {
-        private int _bags;
-        private int _originalkg;
-        private int _toastedkg;
+        private int _kgCrudo;
+        private int _kgCotto;
         private Approvvigionamento _appr;
         private DateTime _data;
         private int _silos;
 
-        public Tostatura(Approvvigionamento appr,DateTime data,int bags,int originalkg, int toastedkg,int silos)
+        public Tostatura(Approvvigionamento appr,DateTime data,int kgCrudo,int kgCotto,int silos)
         {
-            _originalkg = originalkg;
-            _toastedkg = toastedkg;
+            _kgCrudo = kgCrudo;
+            _kgCotto = kgCotto;
             _appr = appr;
             _data = data;
-            _bags = bags;
         }
 
-        public int Bags 
+        public int KgCrudo 
         {
-            get { return _bags; }
-            set { _bags = value; }
+            get { return _kgCrudo; }
+            set { _kgCrudo = value; }
         }
 
-        public int OriginalKg 
+        public int KgCotto
         {
-            get { return _originalkg; }
-            set { _originalkg = value; }
-        }
-
-        public int ToastedKg
-        {
-            get { return _toastedkg; }
-            set { _toastedkg = value; }
+            get { return _kgCotto; }
+            set { _kgCotto = value; }
         }
 
         public Approvvigionamento Appr
@@ -50,7 +42,7 @@ namespace Torrefazione
         {
             get {return _data;}
             set { _data = value; }
-        }        
+        }
 
         public int Silos
         {

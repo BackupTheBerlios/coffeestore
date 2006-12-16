@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Approvvigionamento.cs" />
     <Compile Include="ApprovvigionamentoDataBinder.cs" />
+    <Compile Include="ConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmDialog.Designer.cs">
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Db.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -83,6 +89,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>ApprovvigionamentiView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
@@ -111,6 +121,10 @@
     <EmbeddedResource Include="TostaturaForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>TostaturaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TostaturaFormReviewed.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TostaturaFormReviewed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TostaturaView.resx">
       <SubType>Designer</SubType>
@@ -157,6 +171,12 @@
     </Compile>
     <Compile Include="TostaturaForm.Designer.cs">
       <DependentUpon>TostaturaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TostaturaFormReviewed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TostaturaFormReviewed.Designer.cs">
+      <DependentUpon>TostaturaFormReviewed.cs</DependentUpon>
     </Compile>
     <Compile Include="TostaturaView.cs">
       <SubType>Form</SubType>

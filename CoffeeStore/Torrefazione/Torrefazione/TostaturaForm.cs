@@ -17,12 +17,11 @@ namespace Torrefazione
             _appr = appr;
             InitializeComponent();
             apprlabel.Text = "Venditore: " + _appr.Venditore + " - Origine: " + _appr.Origine + " - Tipo: " + _appr.Tipo;
-            nbags.Maximum = _appr.Sacchi;
+            nbags.Maximum = _appr.SacchiRimanenti;
             nbags.Minimum = 0;
             coffeekg.Minimum = 0;
             coffeekg.Maximum = _appr.KgRimanenti;
             toastedkg.Minimum = 0;
-            //nbags.Value = 0;
         }
 
         private void nbags_ValueChanged(object sender, EventArgs e)
@@ -41,9 +40,9 @@ namespace Torrefazione
         }
 
         private void okbutton_Click(object sender, EventArgs e)
-        {
-            _appr.AddScarico(new Scarico(toastdate.Value,(int) nbags.Value,(int) toastedkg.Value));
-            Tostatura tost = new Tostatura(_appr, toastdate.Value.Date, (int)nbags.Value, (int)coffeekg.Value, (int)toastedkg.Value, (int)silos.Value);
+        {          
+            Tostatura tost = new Tostatura(_appr, toastdate.Value.Date, (int)coffeekg.Value, (int)toastedkg.Value, (int)silos.Value);
+            _appr.AddScarico(new Scarico(tost.Data, 1, tost.KgCrudo));
             Close();
         }
 

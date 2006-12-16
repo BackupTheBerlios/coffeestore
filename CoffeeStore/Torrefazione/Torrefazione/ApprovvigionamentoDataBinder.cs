@@ -10,9 +10,20 @@ namespace Torrefazione
         List<Approvvigionamento> _list;
         DataGridView _dataGridView;
 
+        public delegate bool Filter(Approvvigionamento app);
+
+        Filter _filter;
+
         public ApprovvigionamentoDataBinder(DataGridView dataGridView)
         {
             _dataGridView = dataGridView;
+            _filter = null;
+        }
+
+        public ApprovvigionamentoDataBinder(DataGridView dataGridView, Filter filter)
+        {
+            _dataGridView = dataGridView;
+            _filter = filter;
         }
 
         public void Refresh()
@@ -20,7 +31,10 @@ namespace Torrefazione
             _list = new List<Approvvigionamento>();
 
             foreach (Approvvigionamento app in Db.GetAll<Approvvigionamento>())
-                _list.Add(app);
+            {
+                if (_filter == null || _filter(app))
+                    _list.Add(app);
+            }
 
             _list.Sort(delegate(Approvvigionamento x, Approvvigionamento y)
                 {

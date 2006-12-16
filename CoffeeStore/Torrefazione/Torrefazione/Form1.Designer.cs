@@ -94,6 +94,7 @@ namespace Torrefazione
             this.tostaturaToolStripMenuItem.Name = "tostaturaToolStripMenuItem";
             this.tostaturaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tostaturaToolStripMenuItem.Text = "Tostatura";
+            this.tostaturaToolStripMenuItem.Click += new System.EventHandler(this.tostaturaToolStripMenuItem_Click);
             // 
             // miscelaturaToolStripMenuItem
             // 
