@@ -55,9 +55,22 @@ namespace Torrefazione
                 Tostatura tost = new Tostatura(appr, tostaturaData.Value.Date, (int)kgCrudo.Value, (int)kgCotto.Value, 123);
                 if (appr.AddScarico(new Scarico(tost.Data, 1, tost.KgCrudo)))
                 {
+                    if (appr.SacchiRimanenti == 0 && appr.KgRimanenti > 0)
+                    {
+                        MessageBox.Show("Sacchi finiti, ma ci sono kg rimanenti. Li azzero");
+                        appr.KgRimanenti = 0;
+                    }
+                    if (appr.KgRimanenti == 0 && appr.SacchiRimanenti > 0)
+                    {
+                        MessageBox.Show("Kg finiti, ma ci sono sacchi rimanenti. Aumento i kg in maniera fittizzia.");
+                        appr.KgRimanenti = appr.SacchiRimanenti * 70;
+                    }
+
                     Db.Set(appr.Scarichi);
                     Db.Set(appr);
-                    Close();
+                    Db.Set(tost);
+                    MessageBox.Show("Aggiunta tostatura");
+                    _dataBinder.Refresh();
                 }
                 else
                     MessageBox.Show("Il caffe' e' finito o non e' abbastanza!");

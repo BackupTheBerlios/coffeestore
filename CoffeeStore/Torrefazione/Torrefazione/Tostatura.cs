@@ -12,6 +12,11 @@ namespace Torrefazione
         private DateTime _data;
         private int _silos;
 
+        public Tostatura()
+        {
+
+        }
+
         public Tostatura(Approvvigionamento appr,DateTime data,int kgCrudo,int kgCotto,int silos)
         {
             _kgCrudo = kgCrudo;
@@ -32,7 +37,7 @@ namespace Torrefazione
             set { _kgCotto = value; }
         }
 
-        public Approvvigionamento Appr
+        public Approvvigionamento Approvvigionamento
         {
             get { return _appr; }
             set { _appr = value; }
@@ -50,17 +55,17 @@ namespace Torrefazione
             set { _silos = value; }
         }
 
-        public DateTime DataApprov
+        public DateTime DataApprovvigionameto
         {
             get { return _appr.Data; }
         }
 
-        public Origine Orig
+        public Origine Origine
         {
             get { return _appr.Origine; }
         }
 
-        public Tipo Tip
+        public Tipo Tipo
         {
             get { return _appr.Tipo; }
         }

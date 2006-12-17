@@ -39,5 +39,10 @@ namespace Torrefazione
         {
             new TostaturaFormReviewed().ShowDialog();
         }
+
+        private void tostaturaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new TostaturaView().ShowDialog();
+        }
     }
 }

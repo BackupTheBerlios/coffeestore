@@ -37,11 +37,27 @@ namespace Torrefazione
         int _sacchi;
         int _kgNetti;
 
+        public Scarico()
+        { 
+            
+        }
+
         public Scarico(DateTime data, int sacchi, int kgNetti)
         {
             _data = data;
             _sacchi = sacchi;
             _kgNetti = kgNetti;
+        }
+
+        override public bool Equals(object obj)
+        {
+            Scarico s = (Scarico) obj;
+            return (_data.Equals(s._data) && _sacchi == s._sacchi && _kgNetti == s._kgNetti);        
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 
         public DateTime Data

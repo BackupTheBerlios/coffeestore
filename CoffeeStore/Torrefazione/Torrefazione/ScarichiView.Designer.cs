@@ -31,10 +31,11 @@ namespace Torrefazione
             this.components = new System.ComponentModel.Container();
             this.scaricoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.scaricoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.kgNettiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sacchiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scaricoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scaricoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scaricoBindingSource1)).BeginInit();
@@ -54,16 +55,15 @@ namespace Torrefazione
             this.kgNettiDataGridViewTextBoxColumn,
             this.dataDataGridViewTextBoxColumn,
             this.sacchiDataGridViewTextBoxColumn});
+            this.dataGridView.ContextMenuStrip = this.contextMenuStrip;
             this.dataGridView.DataSource = this.scaricoBindingSource1;
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(344, 531);
             this.dataGridView.TabIndex = 0;
-            // 
-            // scaricoBindingSource1
-            // 
-            this.scaricoBindingSource1.DataSource = typeof(Torrefazione.Scarico);
+            this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RowHeaderMouseClick);
+            this.dataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.ClearContext);
             // 
             // kgNettiDataGridViewTextBoxColumn
             // 
@@ -85,6 +85,15 @@ namespace Torrefazione
             this.sacchiDataGridViewTextBoxColumn.HeaderText = "Sacchi";
             this.sacchiDataGridViewTextBoxColumn.Name = "sacchiDataGridViewTextBoxColumn";
             this.sacchiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scaricoBindingSource1
+            // 
+            this.scaricoBindingSource1.DataSource = typeof(Torrefazione.Scarico);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(61, 4);
             // 
             // ScarichiView
             // 
@@ -109,6 +118,7 @@ namespace Torrefazione
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sacchiDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource scaricoBindingSource1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
 
     }
 }

@@ -31,15 +31,11 @@ namespace Torrefazione
             elimina.Text = "Elimina";
             elimina.Click += new EventHandler(eliminaClicked);
 
-            ToolStripMenuItem scarica = new ToolStripMenuItem();
-            scarica.Text = "Effettua Scarico";
-            scarica.Click += new EventHandler(scaricaClicked);
-
             ToolStripMenuItem viewScarichi = new ToolStripMenuItem();
             viewScarichi.Text = "Visualizza Scarichi";
             viewScarichi.Click += new EventHandler(visualizzaScarichiClicked);
 
-            ToolStripMenuItem[] items = new ToolStripMenuItem[] { elimina, scarica, viewScarichi };
+            ToolStripMenuItem[] items = new ToolStripMenuItem[] { elimina, viewScarichi };
             _toolStripMenu.SetItems(items);
         }
 
@@ -88,21 +84,6 @@ namespace Torrefazione
                 FillField(appr, cell.Value, cell.OwningColumn.DataPropertyName);
             }
             return appr;
-        }
-
-        private void scaricaClicked(object sender, EventArgs e)
-        {
-            Approvvigionamento appr = (Approvvigionamento)Db.GetUnique(GetSelectedApprovvigionamento());
-
-            if (appr.SacchiRimanenti <= 0 || appr.KgRimanenti <= 0)
-            {
-                MessageBox.Show("Il caffe' e' finito!");
-                return;
-            }
-            TostaturaForm tost = new TostaturaForm(appr);
-            tost.ShowDialog();
-            Db.Set(appr.Scarichi);
-            Db.Set(appr);
         }
 
         private void visualizzaScarichiClicked(object sender, EventArgs e)

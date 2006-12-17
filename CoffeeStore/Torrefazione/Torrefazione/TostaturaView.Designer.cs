@@ -29,93 +29,113 @@ namespace Torrefazione
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tostaturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataApprov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.originalKgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toastedKgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Silos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Approvvigionamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataApprovvigionametoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kgCottoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kgCrudoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.silosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tostaturaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // contextMenuStrip
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataApprov,
-            this.Orig,
-            this.Tip,
-            this.Data,
-            this.originalKgDataGridViewTextBoxColumn,
-            this.toastedKgDataGridViewTextBoxColumn,
-            this.Silos});
-            this.dataGridView1.DataSource = this.tostaturaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, -1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 523);
-            this.dataGridView1.TabIndex = 0;
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(61, 4);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataDataGridViewTextBoxColumn,
+            this.Approvvigionamento,
+            this.dataApprovvigionametoDataGridViewTextBoxColumn,
+            this.origineDataGridViewTextBoxColumn,
+            this.kgCottoDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.kgCrudoDataGridViewTextBoxColumn,
+            this.silosDataGridViewTextBoxColumn});
+            this.dataGridView.ContextMenuStrip = this.contextMenuStrip;
+            this.dataGridView.DataSource = this.tostaturaBindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(716, 544);
+            this.dataGridView.TabIndex = 2;
+            this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RowHeaderMouseClick);
+            this.dataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.ClearContext);
             // 
             // tostaturaBindingSource
             // 
             this.tostaturaBindingSource.DataSource = typeof(Torrefazione.Tostatura);
             // 
-            // DataApprov
+            // dataDataGridViewTextBoxColumn
             // 
-            this.DataApprov.DataPropertyName = "DataApprov";
-            this.DataApprov.HeaderText = "Data Approv.";
-            this.DataApprov.Name = "DataApprov";
-            this.DataApprov.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             // 
-            // Orig
+            // Approvvigionamento
             // 
-            this.Orig.DataPropertyName = "Origine";
-            this.Orig.HeaderText = "Origine";
-            this.Orig.Name = "Orig";
+            this.Approvvigionamento.DataPropertyName = "Approvvigionamento";
+            this.Approvvigionamento.HeaderText = "Approvvigionamento";
+            this.Approvvigionamento.Name = "Approvvigionamento";
+            this.Approvvigionamento.Visible = false;
             // 
-            // Tip
+            // dataApprovvigionametoDataGridViewTextBoxColumn
             // 
-            this.Tip.DataPropertyName = "Tipo";
-            this.Tip.HeaderText = "Tipo";
-            this.Tip.Name = "Tip";
+            this.dataApprovvigionametoDataGridViewTextBoxColumn.DataPropertyName = "DataApprovvigionameto";
+            this.dataApprovvigionametoDataGridViewTextBoxColumn.HeaderText = "DataApprovvigionameto";
+            this.dataApprovvigionametoDataGridViewTextBoxColumn.Name = "dataApprovvigionametoDataGridViewTextBoxColumn";
+            this.dataApprovvigionametoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Data
+            // origineDataGridViewTextBoxColumn
             // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data Tost.";
-            this.Data.Name = "Data";
+            this.origineDataGridViewTextBoxColumn.DataPropertyName = "Origine";
+            this.origineDataGridViewTextBoxColumn.HeaderText = "Origine";
+            this.origineDataGridViewTextBoxColumn.Name = "origineDataGridViewTextBoxColumn";
+            this.origineDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // originalKgDataGridViewTextBoxColumn
+            // kgCottoDataGridViewTextBoxColumn
             // 
-            this.originalKgDataGridViewTextBoxColumn.DataPropertyName = "OriginalKg";
-            this.originalKgDataGridViewTextBoxColumn.HeaderText = "Kg Crudo";
-            this.originalKgDataGridViewTextBoxColumn.Name = "originalKgDataGridViewTextBoxColumn";
+            this.kgCottoDataGridViewTextBoxColumn.DataPropertyName = "KgCotto";
+            this.kgCottoDataGridViewTextBoxColumn.HeaderText = "KgCotto";
+            this.kgCottoDataGridViewTextBoxColumn.Name = "kgCottoDataGridViewTextBoxColumn";
             // 
-            // toastedKgDataGridViewTextBoxColumn
+            // tipoDataGridViewTextBoxColumn
             // 
-            this.toastedKgDataGridViewTextBoxColumn.DataPropertyName = "ToastedKg";
-            this.toastedKgDataGridViewTextBoxColumn.HeaderText = "Kg Tostato";
-            this.toastedKgDataGridViewTextBoxColumn.Name = "toastedKgDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Silos
+            // kgCrudoDataGridViewTextBoxColumn
             // 
-            this.Silos.DataPropertyName = "Silos";
-            this.Silos.HeaderText = "Silos";
-            this.Silos.Name = "Silos";
+            this.kgCrudoDataGridViewTextBoxColumn.DataPropertyName = "KgCrudo";
+            this.kgCrudoDataGridViewTextBoxColumn.HeaderText = "KgCrudo";
+            this.kgCrudoDataGridViewTextBoxColumn.Name = "kgCrudoDataGridViewTextBoxColumn";
+            // 
+            // silosDataGridViewTextBoxColumn
+            // 
+            this.silosDataGridViewTextBoxColumn.DataPropertyName = "Silos";
+            this.silosDataGridViewTextBoxColumn.HeaderText = "Silos";
+            this.silosDataGridViewTextBoxColumn.Name = "silosDataGridViewTextBoxColumn";
             // 
             // TostaturaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 568);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Name = "TostaturaView";
             this.Text = "TostaturaView";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tostaturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -123,15 +143,17 @@ namespace Torrefazione
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource tostaturaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataApprov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Orig;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn originalKgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn toastedKgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Silos;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Approvvigionamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataApprovvigionametoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kgCottoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kgCrudoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn silosDataGridViewTextBoxColumn;
 
 
     }

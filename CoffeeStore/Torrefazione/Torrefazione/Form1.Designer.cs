@@ -40,6 +40,7 @@ namespace Torrefazione
             this.approvvigionamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tostaturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +113,8 @@ namespace Torrefazione
             // visualizzaToolStripMenuItem
             // 
             this.visualizzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.approvvigionamentoToolStripMenuItem1});
+            this.approvvigionamentoToolStripMenuItem1,
+            this.tostaturaToolStripMenuItem1});
             this.visualizzaToolStripMenuItem.Name = "visualizzaToolStripMenuItem";
             this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.visualizzaToolStripMenuItem.Text = "Visualizza";
@@ -137,6 +139,13 @@ namespace Torrefazione
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(90, 22);
             this.toolStripMenuItem2.Text = "?";
+            // 
+            // tostaturaToolStripMenuItem1
+            // 
+            this.tostaturaToolStripMenuItem1.Name = "tostaturaToolStripMenuItem1";
+            this.tostaturaToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
+            this.tostaturaToolStripMenuItem1.Text = "Tostatura";
+            this.tostaturaToolStripMenuItem1.Click += new System.EventHandler(this.tostaturaToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -168,6 +177,7 @@ namespace Torrefazione
         private System.Windows.Forms.ToolStripMenuItem confezionamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tostaturaToolStripMenuItem1;
 
     }
 }
