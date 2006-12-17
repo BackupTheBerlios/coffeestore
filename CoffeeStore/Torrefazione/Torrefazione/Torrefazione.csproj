@@ -67,11 +67,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="SilosContentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="SilosContentView.Designer.cs">
+      <DependentUpon>SilosContentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiscelaturaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiscelaturaForm.Designer.cs">
+      <DependentUpon>MiscelaturaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OriginiForm.cs">
       <SubType>Form</SubType>
@@ -97,9 +103,13 @@
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
+    <EmbeddedResource Include="SilosContentView.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form3.cs</DependentUpon>
+      <DependentUpon>SilosContentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscelaturaForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MiscelaturaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OriginiForm.resx">
       <SubType>Designer</SubType>
@@ -121,10 +131,6 @@
     <EmbeddedResource Include="TostaturaForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>TostaturaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TostaturaFormReviewed.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TostaturaFormReviewed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TostaturaView.resx">
       <SubType>Designer</SubType>
@@ -157,6 +163,7 @@
     <Compile Include="ScarichiView.Designer.cs">
       <DependentUpon>ScarichiView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Silos.cs" />
     <Compile Include="TipiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,12 +177,6 @@
     </Compile>
     <Compile Include="TostaturaForm.Designer.cs">
       <DependentUpon>TostaturaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TostaturaFormReviewed.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TostaturaFormReviewed.Designer.cs">
-      <DependentUpon>TostaturaFormReviewed.cs</DependentUpon>
     </Compile>
     <Compile Include="TostaturaView.cs">
       <SubType>Form</SubType>

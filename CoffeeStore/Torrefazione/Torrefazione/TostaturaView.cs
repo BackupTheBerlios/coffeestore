@@ -70,20 +70,24 @@ namespace Torrefazione
                 {
                     Scarico scarico = new Scarico(tostatura.Data, 1, tostatura.KgCrudo);
                     Approvvigionamento appr = tostatura.Approvvigionamento;
-                    Db.Del(tostatura);
-
-                    if (appr.Scarichi.Remove(scarico))
+                    if (SilosContainer.DelByTostatura(tostatura.Silos, tostatura))
                     {
-                        appr.KgRimanenti += scarico.KgNetti;
-                        appr.SacchiRimanenti++;
+                        Db.Del(tostatura);
 
-                        Db.Set(appr.Scarichi);
-                        Db.Set(appr);
+                        if (appr.Scarichi.Remove(scarico))
+                        {
+                            appr.KgRimanenti += scarico.KgNetti;
+                            appr.SacchiRimanenti++;
+
+                            Db.Set(appr.Scarichi);
+                            Db.Set(appr);
+                        }
+
+                        MessageBox.Show("Tostatura eliminata");
+                        RefreshDataGrid();
                     }
-
-                    MessageBox.Show("Tostatura eliminata");
-
-                    RefreshDataGrid();
+                    else
+                        MessageBox.Show("Qualche errore nel rimuovere i riferimenti della tostatura nel silos");
                 }
             }
             else

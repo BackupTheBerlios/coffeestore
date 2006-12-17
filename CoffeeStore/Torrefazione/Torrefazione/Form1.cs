@@ -32,12 +32,12 @@ namespace Torrefazione
 
         private void miscelaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Form3().ShowDialog();
+            new MiscelaturaForm().ShowDialog();
         }
 
         private void tostaturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new TostaturaFormReviewed().ShowDialog();
+            new TostaturaForm().ShowDialog();
         }
 
         private void tostaturaToolStripMenuItem1_Click(object sender, EventArgs e)

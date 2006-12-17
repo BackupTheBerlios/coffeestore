@@ -28,245 +28,236 @@ namespace Torrefazione
         /// </summary>
         private void InitializeComponent()
         {
-            this.toastGroupBox = new System.Windows.Forms.GroupBox();
-            this.resetbutton = new System.Windows.Forms.Button();
-            this.okbutton = new System.Windows.Forms.Button();
-            this.apprlabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.toastdate = new System.Windows.Forms.DateTimePicker();
-            this.nbags = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.coffeekg = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kgRimanentiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sacchiRimanentiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venditoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvvigionamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tostaturaData = new System.Windows.Forms.DateTimePicker();
+            this.kgCrudo = new System.Windows.Forms.NumericUpDown();
+            this.kgCotto = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.toastedkg = new System.Windows.Forms.NumericUpDown();
+            this.kgCrudoLabel = new System.Windows.Forms.Label();
+            this.kgCottoLabel = new System.Windows.Forms.Label();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.labelSilos = new System.Windows.Forms.Label();
             this.silos = new System.Windows.Forms.NumericUpDown();
-            this.toastGroupBox.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbags)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coffeekg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastedkg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgCrudo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgCotto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.silos)).BeginInit();
             this.SuspendLayout();
             // 
-            // toastGroupBox
+            // dataGridView
             // 
-            this.toastGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.toastGroupBox.Controls.Add(this.resetbutton);
-            this.toastGroupBox.Controls.Add(this.okbutton);
-            this.toastGroupBox.Controls.Add(this.apprlabel);
-            this.toastGroupBox.Controls.Add(this.panel1);
-            this.toastGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.toastGroupBox.Name = "toastGroupBox";
-            this.toastGroupBox.Size = new System.Drawing.Size(561, 272);
-            this.toastGroupBox.TabIndex = 1;
-            this.toastGroupBox.TabStop = false;
-            this.toastGroupBox.Text = "Tostatura caffè";
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataDataGridViewTextBoxColumn,
+            this.origineDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.kgRimanentiDataGridViewTextBoxColumn,
+            this.sacchiRimanentiDataGridViewTextBoxColumn,
+            this.venditoreDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.approvvigionamentoBindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(760, 170);
+            this.dataGridView.TabIndex = 0;
             // 
-            // resetbutton
+            // dataDataGridViewTextBoxColumn
             // 
-            this.resetbutton.Location = new System.Drawing.Point(452, 243);
-            this.resetbutton.Name = "resetbutton";
-            this.resetbutton.Size = new System.Drawing.Size(75, 23);
-            this.resetbutton.TabIndex = 9;
-            this.resetbutton.Text = "Annulla";
-            this.resetbutton.UseVisualStyleBackColor = true;
-            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // okbutton
+            // origineDataGridViewTextBoxColumn
             // 
-            this.okbutton.Location = new System.Drawing.Point(371, 243);
-            this.okbutton.Name = "okbutton";
-            this.okbutton.Size = new System.Drawing.Size(75, 23);
-            this.okbutton.TabIndex = 8;
-            this.okbutton.Text = "OK";
-            this.okbutton.UseVisualStyleBackColor = true;
-            this.okbutton.Click += new System.EventHandler(this.okbutton_Click);
+            this.origineDataGridViewTextBoxColumn.DataPropertyName = "Origine";
+            this.origineDataGridViewTextBoxColumn.HeaderText = "Origine";
+            this.origineDataGridViewTextBoxColumn.Name = "origineDataGridViewTextBoxColumn";
+            this.origineDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // apprlabel
+            // tipoDataGridViewTextBoxColumn
             // 
-            this.apprlabel.AutoSize = true;
-            this.apprlabel.Location = new System.Drawing.Point(25, 44);
-            this.apprlabel.Name = "apprlabel";
-            this.apprlabel.Size = new System.Drawing.Size(0, 13);
-            this.apprlabel.TabIndex = 7;
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // panel1
+            // kgRimanentiDataGridViewTextBoxColumn
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.kgRimanentiDataGridViewTextBoxColumn.DataPropertyName = "KgRimanenti";
+            this.kgRimanentiDataGridViewTextBoxColumn.HeaderText = "KgRimanenti";
+            this.kgRimanentiDataGridViewTextBoxColumn.Name = "kgRimanentiDataGridViewTextBoxColumn";
+            this.kgRimanentiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sacchiRimanentiDataGridViewTextBoxColumn
+            // 
+            this.sacchiRimanentiDataGridViewTextBoxColumn.DataPropertyName = "SacchiRimanenti";
+            this.sacchiRimanentiDataGridViewTextBoxColumn.HeaderText = "SacchiRimanenti";
+            this.sacchiRimanentiDataGridViewTextBoxColumn.Name = "sacchiRimanentiDataGridViewTextBoxColumn";
+            this.sacchiRimanentiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // venditoreDataGridViewTextBoxColumn
+            // 
+            this.venditoreDataGridViewTextBoxColumn.DataPropertyName = "Venditore";
+            this.venditoreDataGridViewTextBoxColumn.HeaderText = "Venditore";
+            this.venditoreDataGridViewTextBoxColumn.Name = "venditoreDataGridViewTextBoxColumn";
+            this.venditoreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // approvvigionamentoBindingSource
+            // 
+            this.approvvigionamentoBindingSource.DataSource = typeof(Torrefazione.Approvvigionamento);
+            // 
+            // tostaturaData
+            // 
+            this.tostaturaData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.toastdate);
-            this.panel1.Controls.Add(this.nbags);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.coffeekg);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.toastedkg);
-            this.panel1.Controls.Add(this.silos);
-            this.panel1.Location = new System.Drawing.Point(28, 73);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 158);
-            this.panel1.TabIndex = 6;
+            this.tostaturaData.Location = new System.Drawing.Point(169, 226);
+            this.tostaturaData.Name = "tostaturaData";
+            this.tostaturaData.Size = new System.Drawing.Size(175, 20);
+            this.tostaturaData.TabIndex = 15;
             // 
-            // label5
+            // kgCrudo
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(142, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Data tostatura:";
+            this.kgCrudo.Location = new System.Drawing.Point(169, 272);
+            this.kgCrudo.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.kgCrudo.Name = "kgCrudo";
+            this.kgCrudo.Size = new System.Drawing.Size(175, 20);
+            this.kgCrudo.TabIndex = 16;
             // 
-            // toastdate
+            // kgCotto
             // 
-            this.toastdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.toastdate.Location = new System.Drawing.Point(311, 23);
-            this.toastdate.Name = "toastdate";
-            this.toastdate.Size = new System.Drawing.Size(175, 20);
-            this.toastdate.TabIndex = 14;
-            // 
-            // nbags
-            // 
-            this.nbags.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.nbags.Location = new System.Drawing.Point(311, 49);
-            this.nbags.Name = "nbags";
-            this.nbags.Size = new System.Drawing.Size(175, 20);
-            this.nbags.TabIndex = 13;
-            this.nbags.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nbags.ValueChanged += new System.EventHandler(this.nbags_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(142, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Numero sacchi da tostare:";
-            // 
-            // coffeekg
-            // 
-            this.coffeekg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.coffeekg.Location = new System.Drawing.Point(311, 75);
-            this.coffeekg.Name = "coffeekg";
-            this.coffeekg.Size = new System.Drawing.Size(175, 20);
-            this.coffeekg.TabIndex = 11;
-            this.coffeekg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.coffeekg.ValueChanged += new System.EventHandler(this.coffeekg_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Silos destinazione:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(142, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Quantità di caffè tostato (kg):";
+            this.kgCotto.Location = new System.Drawing.Point(169, 313);
+            this.kgCotto.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.kgCotto.Name = "kgCotto";
+            this.kgCotto.Size = new System.Drawing.Size(175, 20);
+            this.kgCotto.TabIndex = 17;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 77);
+            this.label1.Location = new System.Drawing.Point(64, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Quantità di caffè da tostare (kg):";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Data";
             // 
-            // toastedkg
+            // kgCrudoLabel
             // 
-            this.toastedkg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.toastedkg.Location = new System.Drawing.Point(311, 101);
-            this.toastedkg.Name = "toastedkg";
-            this.toastedkg.Size = new System.Drawing.Size(175, 20);
-            this.toastedkg.TabIndex = 6;
-            this.toastedkg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.kgCrudoLabel.AutoSize = true;
+            this.kgCrudoLabel.Location = new System.Drawing.Point(64, 272);
+            this.kgCrudoLabel.Name = "kgCrudoLabel";
+            this.kgCrudoLabel.Size = new System.Drawing.Size(48, 13);
+            this.kgCrudoLabel.TabIndex = 19;
+            this.kgCrudoLabel.Text = "KgCrudo";
+            // 
+            // kgCottoLabel
+            // 
+            this.kgCottoLabel.AutoSize = true;
+            this.kgCottoLabel.Location = new System.Drawing.Point(64, 313);
+            this.kgCottoLabel.Name = "kgCottoLabel";
+            this.kgCottoLabel.Size = new System.Drawing.Size(45, 13);
+            this.kgCottoLabel.TabIndex = 20;
+            this.kgCottoLabel.Text = "KgCotto";
+            // 
+            // buttonOK
+            // 
+            this.buttonOK.Location = new System.Drawing.Point(604, 468);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.TabIndex = 21;
+            this.buttonOK.Text = "Aggiungi";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // labelSilos
+            // 
+            this.labelSilos.AutoSize = true;
+            this.labelSilos.Location = new System.Drawing.Point(67, 358);
+            this.labelSilos.Name = "labelSilos";
+            this.labelSilos.Size = new System.Drawing.Size(29, 13);
+            this.labelSilos.TabIndex = 22;
+            this.labelSilos.Text = "Silos";
             // 
             // silos
             // 
-            this.silos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.silos.Location = new System.Drawing.Point(311, 127);
+            this.silos.Location = new System.Drawing.Point(169, 351);
+            this.silos.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.silos.Name = "silos";
             this.silos.Size = new System.Drawing.Size(175, 20);
-            this.silos.TabIndex = 7;
-            this.silos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.silos.TabIndex = 23;
             // 
             // TostaturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 316);
-            this.Controls.Add(this.toastGroupBox);
-            this.MaximumSize = new System.Drawing.Size(593, 343);
-            this.MinimumSize = new System.Drawing.Size(593, 343);
+            this.ClientSize = new System.Drawing.Size(784, 607);
+            this.Controls.Add(this.silos);
+            this.Controls.Add(this.labelSilos);
+            this.Controls.Add(this.buttonOK);
+            this.Controls.Add(this.kgCottoLabel);
+            this.Controls.Add(this.kgCrudoLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.kgCotto);
+            this.Controls.Add(this.kgCrudo);
+            this.Controls.Add(this.tostaturaData);
+            this.Controls.Add(this.dataGridView);
             this.Name = "TostaturaForm";
-            this.Text = "Tostatura";
-            this.toastGroupBox.ResumeLayout(false);
-            this.toastGroupBox.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbags)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coffeekg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastedkg)).EndInit();
+            this.Text = "TostaturaFormReviewed";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvvigionamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgCrudo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgCotto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.silos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox toastGroupBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NumericUpDown nbags;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown coffeekg;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.BindingSource approvvigionamentoBindingSource;
+        private System.Windows.Forms.DateTimePicker tostaturaData;
+        private System.Windows.Forms.NumericUpDown kgCrudo;
+        private System.Windows.Forms.NumericUpDown kgCotto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown toastedkg;
+        private System.Windows.Forms.Label kgCrudoLabel;
+        private System.Windows.Forms.Label kgCottoLabel;
+        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kgRimanentiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sacchiRimanentiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venditoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelSilos;
         private System.Windows.Forms.NumericUpDown silos;
-        private System.Windows.Forms.DateTimePicker toastdate;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label apprlabel;
-        private System.Windows.Forms.Button resetbutton;
-        private System.Windows.Forms.Button okbutton;
+
     }
 }

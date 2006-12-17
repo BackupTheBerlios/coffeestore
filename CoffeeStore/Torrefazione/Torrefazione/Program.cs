@@ -13,6 +13,7 @@ namespace Torrefazione
         static void Main()
         {
             Db.initialize();
+            SilosContainer.Init();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

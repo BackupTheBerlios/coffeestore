@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Torrefazione
 {
-    class Tostatura
+    public class Tostatura
     {
         private int _kgCrudo;
         private int _kgCotto;
@@ -23,6 +23,7 @@ namespace Torrefazione
             _kgCotto = kgCotto;
             _appr = appr;
             _data = data;
+            _silos = silos;
         }
 
         public int KgCrudo 
