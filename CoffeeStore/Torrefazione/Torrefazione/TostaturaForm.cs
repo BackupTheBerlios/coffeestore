@@ -58,7 +58,7 @@ namespace Torrefazione
                 DataGridViewRow firstRow = (DataGridViewRow) en.Current;
                 Approvvigionamento appr = (Approvvigionamento) Db.GetUnique(GetSelectedApprovvigionamento(firstRow.Cells));
 
-                Tostatura tost = new Tostatura(appr, tostaturaData.Value.Date, (int)kgCrudo.Value, (int)kgCotto.Value, (int)silos.Value);
+                Tostatura tost = new Tostatura(appr, tostaturaData.Value.Date, (int)kgCrudo.Value, (int)kgCotto.Value, (int)silos.Value - 1);
                 if (appr.AddScarico(new Scarico(tost.Data, 1, tost.KgCrudo)))
                 {
                     if (appr.SacchiRimanenti == 0 && appr.KgRimanenti > 0)

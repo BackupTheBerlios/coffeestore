@@ -208,9 +208,19 @@ namespace Torrefazione
             0,
             0,
             0});
+            this.silos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.silos.Name = "silos";
             this.silos.Size = new System.Drawing.Size(175, 20);
             this.silos.TabIndex = 23;
+            this.silos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // TostaturaForm
             // 
