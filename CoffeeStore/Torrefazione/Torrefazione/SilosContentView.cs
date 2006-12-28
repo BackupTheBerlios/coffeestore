@@ -13,10 +13,12 @@ namespace Torrefazione
         public SilosContentView(int i)
         {
             InitializeComponent();
-
-            label1.Text = "";
+            label.Text = "";
             foreach (SilosContent sc in SilosContainer.GetEnumerable(i))
-                label1.Text += sc.GetType() + " - " + sc.KgRimanenti + "\n";
+            {
+                sc.Activate(Db._data);
+                label.Text += String.Format("Data [{0}] Origine [{1}] Tipo [{2}] KgRimanenti [{3}]\n", sc.Data, sc.Origine, sc.Tipo, sc.KgRimanenti);
+            }
         }
     }
 }

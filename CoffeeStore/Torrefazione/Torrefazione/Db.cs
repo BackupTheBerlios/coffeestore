@@ -8,11 +8,12 @@ namespace Torrefazione
 {
     static public class Db
     {
-        private static ObjectContainer _data;
+        public static ObjectContainer _data;
 
         public static void initialize()
         {
             _data = Db4o.OpenFile("db.db");
+            Db4o.Configure().ObjectClass(typeof(TostaturaSilosContent)).CascadeOnUpdate(true);
         }
 
         public static void Close()
@@ -84,6 +85,11 @@ namespace Torrefazione
                 return null;
 
             return (Origine)objectSet.Next();
+        }
+
+        public static long GetId(object obj)
+        {
+            return _data.Ext().GetID(obj);
         }
     }
 }

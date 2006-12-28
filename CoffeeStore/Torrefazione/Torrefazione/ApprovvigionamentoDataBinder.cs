@@ -46,6 +46,26 @@ namespace Torrefazione
             _dataGridView.Refresh();
         }
 
+        public void RefreshInverted()
+        {
+            _list = new List<Approvvigionamento>();
+
+            foreach (Approvvigionamento app in Db.GetAll<Approvvigionamento>())
+            {
+                if (_filter == null || _filter(app))
+                    _list.Add(app);
+            }
+
+            _list.Sort(delegate(Approvvigionamento x, Approvvigionamento y)
+                {
+                    return x.Data.CompareTo(y.Data);
+                }
+            );
+
+            _dataGridView.DataSource = _list;
+            _dataGridView.Refresh();
+        }
+
         public int Count
         {
             get { return (_list != null) ? _list.Count : 0; }

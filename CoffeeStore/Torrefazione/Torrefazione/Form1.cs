@@ -44,5 +44,20 @@ namespace Torrefazione
         {
             new TostaturaView().ShowDialog();
         }
+        
+        private void miscelaturaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new MiscelaturaView().ShowDialog();
+        }
+
+        private void confezionamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConfezioniForm().ShowDialog();
+        }
+
+        private void confezionamentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new ConfezioniView().ShowDialog();
+        }
     }
 }

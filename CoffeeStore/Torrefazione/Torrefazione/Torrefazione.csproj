@@ -54,6 +54,19 @@
     </Compile>
     <Compile Include="Approvvigionamento.cs" />
     <Compile Include="ApprovvigionamentoDataBinder.cs" />
+    <Compile Include="Confezione.cs" />
+    <Compile Include="ConfezioniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfezioniForm.Designer.cs">
+      <DependentUpon>ConfezioniForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfezioniView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfezioniView.Designer.cs">
+      <DependentUpon>ConfezioniView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfirmDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +79,13 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Miscelatura.cs" />
+    <Compile Include="MiscelaturaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiscelaturaView.Designer.cs">
+      <DependentUpon>MiscelaturaView.cs</DependentUpon>
     </Compile>
     <Compile Include="SilosContentView.cs">
       <SubType>Form</SubType>
@@ -95,6 +115,14 @@
       <SubType>Designer</SubType>
       <DependentUpon>ApprovvigionamentiView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfezioniForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfezioniForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfezioniView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfezioniView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfirmDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ConfirmDialog.cs</DependentUpon>
@@ -102,6 +130,10 @@
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscelaturaView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MiscelaturaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SilosContentView.resx">
       <SubType>Designer</SubType>
@@ -146,6 +178,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Approvvigionamento.datasource" />
+    <None Include="Properties\DataSources\Confezione.datasource" />
+    <None Include="Properties\DataSources\Miscelatura.datasource" />
     <None Include="Properties\DataSources\Scarico.datasource" />
     <None Include="Properties\DataSources\Tostatura.datasource" />
     <None Include="Properties\Settings.settings">

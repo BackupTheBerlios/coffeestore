@@ -31,7 +31,6 @@ namespace Torrefazione
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.tostaturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Approvvigionamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataApprovvigionametoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +39,7 @@ namespace Torrefazione
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kgCrudoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.silosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tostaturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tostaturaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,9 @@ namespace Torrefazione
             // 
             // dataGridView
             // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -70,10 +73,6 @@ namespace Torrefazione
             this.dataGridView.TabIndex = 2;
             this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RowHeaderMouseClick);
             this.dataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.ClearContext);
-            // 
-            // tostaturaBindingSource
-            // 
-            this.tostaturaBindingSource.DataSource = typeof(Torrefazione.Tostatura);
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -126,6 +125,10 @@ namespace Torrefazione
             this.silosDataGridViewTextBoxColumn.DataPropertyName = "Silos";
             this.silosDataGridViewTextBoxColumn.HeaderText = "Silos";
             this.silosDataGridViewTextBoxColumn.Name = "silosDataGridViewTextBoxColumn";
+            // 
+            // tostaturaBindingSource
+            // 
+            this.tostaturaBindingSource.DataSource = typeof(Torrefazione.Tostatura);
             // 
             // TostaturaView
             // 

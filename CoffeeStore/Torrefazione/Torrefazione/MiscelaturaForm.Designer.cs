@@ -37,7 +37,7 @@ namespace Torrefazione
             this.InfoSilos2 = new System.Windows.Forms.Button();
             this.InfoSilos1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nomeMiscela = new System.Windows.Forms.TextBox();
             this.InfoSilos0 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -45,41 +45,33 @@ namespace Torrefazione
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos3 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos4 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos5 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos6 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos7 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.kgSilos1 = new System.Windows.Forms.NumericUpDown();
             this.kgSilos0 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.silosDestinazione = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgSilos0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.silosDestinazione)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,7 +84,7 @@ namespace Torrefazione
             this.groupBox1.Controls.Add(this.InfoSilos2);
             this.groupBox1.Controls.Add(this.InfoSilos1);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.nomeMiscela);
             this.groupBox1.Controls.Add(this.InfoSilos0);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -100,20 +92,20 @@ namespace Torrefazione
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.numericUpDown11);
-            this.groupBox1.Controls.Add(this.numericUpDown10);
-            this.groupBox1.Controls.Add(this.numericUpDown9);
-            this.groupBox1.Controls.Add(this.numericUpDown8);
-            this.groupBox1.Controls.Add(this.numericUpDown7);
-            this.groupBox1.Controls.Add(this.numericUpDown6);
+            this.groupBox1.Controls.Add(this.kgSilos3);
+            this.groupBox1.Controls.Add(this.kgSilos4);
+            this.groupBox1.Controls.Add(this.kgSilos5);
+            this.groupBox1.Controls.Add(this.kgSilos6);
+            this.groupBox1.Controls.Add(this.kgSilos7);
+            this.groupBox1.Controls.Add(this.kgSilos2);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.datePicker);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.kgSilos1);
             this.groupBox1.Controls.Add(this.kgSilos0);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.numericUpDown5);
+            this.groupBox1.Controls.Add(this.silosDestinazione);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -201,12 +193,12 @@ namespace Torrefazione
             this.label8.TabIndex = 45;
             this.label8.Text = "Nome Miscela";
             // 
-            // textBox1
+            // nomeMiscela
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 44;
+            this.nomeMiscela.Location = new System.Drawing.Point(157, 62);
+            this.nomeMiscela.Name = "nomeMiscela";
+            this.nomeMiscela.Size = new System.Drawing.Size(163, 20);
+            this.nomeMiscela.TabIndex = 44;
             // 
             // InfoSilos0
             // 
@@ -221,98 +213,98 @@ namespace Torrefazione
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 184);
+            this.label14.Location = new System.Drawing.Point(32, 160);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(13, 13);
             this.label14.TabIndex = 40;
-            this.label14.Text = "3";
+            this.label14.Text = "2";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 208);
+            this.label13.Location = new System.Drawing.Point(32, 184);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(13, 13);
             this.label13.TabIndex = 39;
-            this.label13.Text = "4";
+            this.label13.Text = "3";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 238);
+            this.label12.Location = new System.Drawing.Point(32, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(13, 13);
             this.label12.TabIndex = 38;
-            this.label12.Text = "5";
+            this.label12.Text = "4";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 290);
+            this.label11.Location = new System.Drawing.Point(32, 266);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(13, 13);
             this.label11.TabIndex = 37;
-            this.label11.Text = "7";
+            this.label11.Text = "6";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 264);
+            this.label10.Location = new System.Drawing.Point(32, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(13, 13);
             this.label10.TabIndex = 36;
-            this.label10.Text = "6";
+            this.label10.Text = "5";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 314);
+            this.label9.Location = new System.Drawing.Point(32, 290);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 13);
             this.label9.TabIndex = 35;
-            this.label9.Text = "8";
+            this.label9.Text = "7";
             // 
-            // numericUpDown11
+            // kgSilos3
             // 
-            this.numericUpDown11.Location = new System.Drawing.Point(67, 210);
-            this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown11.TabIndex = 33;
+            this.kgSilos3.Location = new System.Drawing.Point(67, 210);
+            this.kgSilos3.Name = "kgSilos3";
+            this.kgSilos3.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos3.TabIndex = 33;
             // 
-            // numericUpDown10
+            // kgSilos4
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(67, 236);
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown10.TabIndex = 32;
+            this.kgSilos4.Location = new System.Drawing.Point(67, 236);
+            this.kgSilos4.Name = "kgSilos4";
+            this.kgSilos4.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos4.TabIndex = 32;
             // 
-            // numericUpDown9
+            // kgSilos5
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(67, 262);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown9.TabIndex = 31;
+            this.kgSilos5.Location = new System.Drawing.Point(67, 262);
+            this.kgSilos5.Name = "kgSilos5";
+            this.kgSilos5.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos5.TabIndex = 31;
             // 
-            // numericUpDown8
+            // kgSilos6
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(67, 288);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown8.TabIndex = 30;
+            this.kgSilos6.Location = new System.Drawing.Point(67, 288);
+            this.kgSilos6.Name = "kgSilos6";
+            this.kgSilos6.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos6.TabIndex = 30;
             // 
-            // numericUpDown7
+            // kgSilos7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(67, 314);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 29;
+            this.kgSilos7.Location = new System.Drawing.Point(67, 314);
+            this.kgSilos7.Name = "kgSilos7";
+            this.kgSilos7.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos7.TabIndex = 29;
             // 
-            // numericUpDown6
+            // kgSilos2
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(67, 184);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 28;
+            this.kgSilos2.Location = new System.Drawing.Point(67, 184);
+            this.kgSilos2.Name = "kgSilos2";
+            this.kgSilos2.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos2.TabIndex = 28;
             // 
             // label5
             // 
@@ -323,12 +315,12 @@ namespace Torrefazione
             this.label5.TabIndex = 25;
             this.label5.Text = "Data";
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(67, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 24;
+            this.datePicker.Location = new System.Drawing.Point(67, 23);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 24;
             // 
             // label6
             // 
@@ -339,12 +331,12 @@ namespace Torrefazione
             this.label6.TabIndex = 26;
             this.label6.Text = "Silos Origine";
             // 
-            // numericUpDown2
+            // kgSilos1
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(67, 158);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 16;
+            this.kgSilos1.Location = new System.Drawing.Point(67, 158);
+            this.kgSilos1.Name = "kgSilos1";
+            this.kgSilos1.Size = new System.Drawing.Size(120, 20);
+            this.kgSilos1.TabIndex = 16;
             // 
             // kgSilos0
             // 
@@ -365,129 +357,87 @@ namespace Torrefazione
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 160);
+            this.label2.Location = new System.Drawing.Point(32, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 20;
-            this.label2.Text = "2";
+            this.label2.Text = "1";
             // 
-            // numericUpDown5
+            // silosDestinazione
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(282, 127);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 23;
+            this.silosDestinazione.Location = new System.Drawing.Point(282, 127);
+            this.silosDestinazione.Maximum = new decimal(new int[] {
+            13,
+            0,
+            0,
+            0});
+            this.silosDestinazione.Minimum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.silosDestinazione.Name = "silosDestinazione";
+            this.silosDestinazione.Size = new System.Drawing.Size(120, 20);
+            this.silosDestinazione.TabIndex = 23;
+            this.silosDestinazione.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 134);
+            this.label1.Location = new System.Drawing.Point(32, 316);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "1";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(290, 602);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(371, 602);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(140, 500);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "4";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(140, 474);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "3";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(159, 498);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 18;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(159, 472);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 17;
+            this.label1.Text = "8";
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(390, 366);
+            this.button3.Location = new System.Drawing.Point(389, 373);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 30;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(309, 366);
+            this.button4.Location = new System.Drawing.Point(308, 373);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 31;
             this.button4.Text = "Annula";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // MiscelaturaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 401);
+            this.ClientSize = new System.Drawing.Size(474, 408);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Name = "MiscelaturaForm";
             this.Text = "Form3";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kgSilos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgSilos0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.silosDestinazione)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -500,32 +450,26 @@ namespace Torrefazione
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown11;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
-        private System.Windows.Forms.NumericUpDown numericUpDown9;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown kgSilos3;
+        private System.Windows.Forms.NumericUpDown kgSilos4;
+        private System.Windows.Forms.NumericUpDown kgSilos5;
+        private System.Windows.Forms.NumericUpDown kgSilos6;
+        private System.Windows.Forms.NumericUpDown kgSilos7;
+        private System.Windows.Forms.NumericUpDown kgSilos2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown kgSilos1;
         private System.Windows.Forms.NumericUpDown kgSilos0;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown silosDestinazione;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button InfoSilos0;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nomeMiscela;
         private System.Windows.Forms.Button InfoSilos7;
         private System.Windows.Forms.Button InfoSilos6;
         private System.Windows.Forms.Button InfoSilos5;

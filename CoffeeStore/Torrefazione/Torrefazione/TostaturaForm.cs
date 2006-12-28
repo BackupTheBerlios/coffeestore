@@ -23,7 +23,9 @@ namespace Torrefazione
         {
             InitializeComponent();
             _dataBinder = new ApprovvigionamentoDataBinder(dataGridView, myFilter);
-            _dataBinder.Refresh();
+            _dataBinder.RefreshInverted();
+            kgCrudo.Value = 70;
+            kgCotto.Value = 50;
         }
 
         private void FillField(Approvvigionamento appr, object value, string property)
@@ -58,7 +60,7 @@ namespace Torrefazione
                 DataGridViewRow firstRow = (DataGridViewRow) en.Current;
                 Approvvigionamento appr = (Approvvigionamento) Db.GetUnique(GetSelectedApprovvigionamento(firstRow.Cells));
 
-                Tostatura tost = new Tostatura(appr, tostaturaData.Value.Date, (int)kgCrudo.Value, (int)kgCotto.Value, (int)silos.Value - 1);
+                Tostatura tost = new Tostatura(appr, tostaturaData.Value.Date, (int)kgCrudo.Value, (int)kgCotto.Value, (int)silos.Value);
                 if (appr.AddScarico(new Scarico(tost.Data, 1, tost.KgCrudo)))
                 {
                     if (appr.SacchiRimanenti == 0 && appr.KgRimanenti > 0)
@@ -72,14 +74,20 @@ namespace Torrefazione
                         appr.KgRimanenti = appr.SacchiRimanenti * 70;
                     }
 
-                    Db.Set(appr.Scarichi);
                     Db.Set(appr);
-                    Db.Set(tost);
+                    Db.Set(appr.Scarichi);
 
-                    SilosContainer.Put((int)tost.Silos, new TostaturaSilosContent(tost));
+                    Approvvigionamento a = (Approvvigionamento)Db.GetUnique(appr);
+                    tost.Approvvigionamento = a;
+
+                    Db.Set(tost);
+                 
+                    Tostatura t = (Tostatura)Db.GetUnique(tost);
+
+                    SilosContainer.Put((int)tost.Silos, new TostaturaSilosContent(t));
 
                     MessageBox.Show("Aggiunta tostatura");
-                    _dataBinder.Refresh();
+                    _dataBinder.RefreshInverted();
                 }
                 else
                     MessageBox.Show("Il caffe' e' finito o non e' abbastanza!");
