@@ -59,5 +59,10 @@ namespace Torrefazione
         {
             new ConfezioniView().ShowDialog();
         }
+
+        private void dToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new StoricoLotto().ShowDialog();
+        }
     }
 }

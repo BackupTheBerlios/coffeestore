@@ -40,9 +40,11 @@ namespace Torrefazione
             this.approvvigionamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tostaturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.miscelaturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.confezionamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.confezionamentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ricercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,8 @@ namespace Torrefazione
             this.fileToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.visualizzaToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.ricercaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(482, 24);
@@ -145,6 +148,13 @@ namespace Torrefazione
             this.miscelaturaToolStripMenuItem1.Text = "Miscelatura";
             this.miscelaturaToolStripMenuItem1.Click += new System.EventHandler(this.miscelaturaToolStripMenuItem1_Click);
             // 
+            // confezionamentoToolStripMenuItem1
+            // 
+            this.confezionamentoToolStripMenuItem1.Name = "confezionamentoToolStripMenuItem1";
+            this.confezionamentoToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
+            this.confezionamentoToolStripMenuItem1.Text = "Confezionamento";
+            this.confezionamentoToolStripMenuItem1.Click += new System.EventHandler(this.confezionamentoToolStripMenuItem1_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -156,15 +166,23 @@ namespace Torrefazione
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(90, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem2.Text = "?";
             // 
-            // confezionamentoToolStripMenuItem1
+            // ricercaToolStripMenuItem
             // 
-            this.confezionamentoToolStripMenuItem1.Name = "confezionamentoToolStripMenuItem1";
-            this.confezionamentoToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.confezionamentoToolStripMenuItem1.Text = "Confezionamento";
-            this.confezionamentoToolStripMenuItem1.Click += new System.EventHandler(this.confezionamentoToolStripMenuItem1_Click);
+            this.ricercaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dToolStripMenuItem});
+            this.ricercaToolStripMenuItem.Name = "ricercaToolStripMenuItem";
+            this.ricercaToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ricercaToolStripMenuItem.Text = "Ricerca";
+            // 
+            // dToolStripMenuItem
+            // 
+            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dToolStripMenuItem.Text = "Storico lotto";
+            this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -199,6 +217,8 @@ namespace Torrefazione
         private System.Windows.Forms.ToolStripMenuItem tostaturaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem miscelaturaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem confezionamentoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ricercaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
 
     }
 }

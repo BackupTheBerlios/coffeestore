@@ -156,6 +156,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>ScarichiView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StoricoLotto.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StoricoLotto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipiForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>TipiForm.cs</DependentUpon>
@@ -198,6 +202,12 @@
       <DependentUpon>ScarichiView.cs</DependentUpon>
     </Compile>
     <Compile Include="Silos.cs" />
+    <Compile Include="StoricoLotto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoricoLotto.Designer.cs">
+      <DependentUpon>StoricoLotto.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipiForm.cs">
       <SubType>Form</SubType>
     </Compile>

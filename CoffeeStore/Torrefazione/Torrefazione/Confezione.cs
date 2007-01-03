@@ -12,7 +12,9 @@ namespace Torrefazione
         private int _numConfezioni;
         private string _lotto;
 
-        List<SilosContent> _contentConfezione;
+        public List<SilosContent> _contentConfezione;
+
+
 
         public Confezione(int siloProv, int pesoNettoTotale, string tipoConfezione, int numConfezioni, string lotto, List<SilosContent> contentConfezione)
         {
